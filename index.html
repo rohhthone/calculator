@@ -91,6 +91,8 @@
         .landing>.device>a>div{width: 100%; aspect-ratio: 1/1; background: var(--SYSTEM_0-7); border-radius: 100%; display: flex; align-items: flex-end; justify-content: center;}
         .landing>.device>a>div>img{width: 80%; height: 80%; object-fit: cover; z-index: 2;}
 
+        
+
         .a5{position: relative; }
         .a5>video{position: absolute;}
         .a5:hover>video{border-radius: 50%; width: 100%; height: 100%; position: absolute; animation: a5 20s ease; }
@@ -99,6 +101,16 @@
 
         body{overflow-x: hidden;}
 
+        .a10{display: none;}
+        
+        /* .about.us{background: var(--SYSTEM_0-1);} */
+        @media screen and (max-width: 90vh) {
+                  .landing>.device{flex-direction: column; width: 100%;}
+                  .landing>.device>a{flex-direction: column; width: 100%; aspect-ratio: 1/1;}
+                  .a10{display: flex;}
+                  #nav{display: none;}
+                  #body>div{margin: var(--BIN5) 0 0 0;}
+                }
         @keyframes a1 {
           0%    { opacity: 0; left: -100%;}
           40%    { opacity: 0; left: -60%;}
@@ -172,7 +184,7 @@
 
       </div>
       
-      <div class="full thin divider"></div>
+      <div class="seamless thin divider"></div>
       <div class="about us">
         <h2 class="title">Название компании - сервис по продаже и покупке рабочих Apple устройств.</h2>
         <div class="three facts in_a row">
@@ -250,11 +262,15 @@
         .reverse.facts>.fact>h3{color: var(--SYSTEM_1-1);font-weight: 700;}
         .reverse.facts>.fact>p{color: var(--SYSTEM_1-3);font-weight: 500; font-size: 0.9em;}
 
+        @media screen and (max-width: 90vh) {
+          .facts.in_a.row{flex-direction: column;}
+        }
+
         .full.divider{width: 100%;}
         .thin.divider{height: 2px; background: #0002;}
         
         .reverse{background: var(--foreground); color: var(--background);}
-        .seamless.block{width:calc(100vw); align-self: center;}
+        .seamless{width:calc(100vw); align-self: center;}
 
         .block.with.faq{display: flex; align-items: center; justify-content: space-around; flex-direction: column; box-sizing: border-box; padding: 1em 0;}
         .faq>h2{margin: 0.75em 0;}
@@ -262,12 +278,20 @@
         .QA>h3{color: var(--SYSTEM_0-1); font-weight: 500;}
         .QA>p{color: var(--SYSTEM_0-1); font-weight: 400;}
 
+        @media screen and (max-width: 90vh) {
+          .block.with.faq>.QA{width: 90%;}
+        }
+
         .block.with.reviews{display: flex; align-items: center; flex-direction: column; gap: 2em;}
         .reviews>.review{width: calc(var(--width) * 0.6); display: flex; gap: 1em;}
         .reviews>.review>.avatar{border-radius: 50%; width: 4em; aspect-ratio: 1/1;}
         .reviews>.review>div{display: flex; align-items:flex-start; justify-content:center;  flex-direction: column;}
         .reviews>.review>div>h3{color: var(--SYSTEM_1-1);}
         .reviews>.review>div>p{font-weight: 500;}
+
+        @media screen and (max-width: 90vh) {
+          .reviews>.review{width: 90%;}
+        }
 
         .block.with.action.PF{display: flex; flex-direction: column; align-items: center; box-sizing: border-box; padding: 3em 0;}
         .block.with.action.PF>h2, .block.with.action.PF>p, .block.with.action.PF>form{width: calc(var(--width) * 0.6); font-weight: 500; }
@@ -278,13 +302,22 @@
         .reverse.block.with.action.PF>form.action.PF>input:first-child{width: 80%; border-radius: var(--BIN3) 0 0  var(--BIN3);}
         .reverse.block.with.action.PF>form.action.PF>input:last-child{width: 20%; border-radius:0 var(--BIN3)   var(--BIN3) 0;}
 
+        @media screen and (max-width: 90vh) {
+          .block.with.action.PF>h2, .block.with.action.PF>p, .block.with.action.PF>form{width: 90%;}
+          .reverse.block.with.action.PF>form.action.PF>input:first-child{width: 60%; }
+        .reverse.block.with.action.PF>form.action.PF>input:last-child{width: 40%;}
+        }
+
         .block.of.contacts {width: calc(var(--width) * 0.6);display: flex; flex-direction: column; align-items: center;}
         .block.of.contacts > div{display: flex; flex-direction: column; align-items: flex-start;}
         .block.of.contacts > div > .contact{display: flex; flex-direction: column; align-items: flex-start; margin: 1em 0 ;}
         .block.of.contacts > div > .contact > h3{ color: var(--SYSTEM_1-1);font-weight: 500;}
         .block.of.contacts > div > .contact > a{ font-weight: 500;}
         .block.of.contacts > .dynamic{aspect-ratio: 1/1; background: #000; border-radius: var(--BIN3); margin: 1em 0 ;}
-
+        
+        @media screen and (max-width: 90vh) {
+          .block.of.contacts{width: 90%;}
+        }
       </style>
       <div class="block of contacts">
         <h2>Контакты</h2>
