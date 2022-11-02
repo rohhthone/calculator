@@ -5,21 +5,116 @@
   <meta author="Rohh Thone">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title style="display: none">WebPage</title>
-  <meta name="description" content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.">
+  <title style="display: none">Скупка Дорого</title>
+  <meta name="description" content="Скупка дорого по покупке и трейд-ину устройств, специлизируемся на продаже Apple техники..">
   <meta name="keywords" content="">
-  <link rel="stylesheet" href="https://rohhthone.com/API/VOID/000001/ro.css"><link rel="stylesheet" href="https://rohhthone.com/API/VOID/000001/variable.css"><link rel="stylesheet" href="https://rohhthone.com/API/VOID/000001/clear.css"><link rel="stylesheet" href="https://rohhthone.com/API/VOID/000001/module.css">   <link rel="stylesheet" href="https://rohhthone.com/API/VOID/000001/animation.css"><link rel="stylesheet" href="https://rohhthone.com/API/VOID/ro.css"><link rel="stylesheet" href="https://rohhthone.com/API/VOID/module.css">
+  <link rel="stylesheet" href="https://rohhthone.github.io/VOID/000001/ro.css"><link rel="stylesheet" href="https://rohhthone.github.io/VOID/000001/variable.css"><link rel="stylesheet" href="https://rohhthone.github.io/VOID/000001/clear.css"><link rel="stylesheet" href="https://rohhthone.github.io/VOID/000001/module.css"><link rel="stylesheet" href="https://rohhthone.github.io/VOID/000001/animation.css">
 </head>
   
   <body class="mid">
     <header class="">
       <a href="../../">Главная</a>
-      <h1>Название компании</h1>
+      <h1>Скупка Дорого</h1>
       <a href="../../contact/">Контакты</a>
     </header>
     
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+    *{all:unset}
+    .mid{display: flex; align-items: center; justify-content: space-around;}
+    .mid-between{display: flex; align-items: center; justify-content: space-between;}
+    .mid-column{display: flex; align-items: center; justify-content: space-around; flex-direction: column;}
+    .mid-column-between{display: flex; align-items: center; justify-content: space-between; flex-direction: column;}
+
+    /* Variables*/
+:root{
+
+/* SIZES */
+  /* Binary sizes */
+  --_b0:1px;--_b1:2px;--_b2:4px;--_b3:8px;--_b4:16px;--_b5:32px;--_b6:64px;--_b7:128px;--_b8:256px;--_b9:512px;--_b10:1024px;
+  /* Binary coefficient */
+  --BIN: 2;
+  /* Binary square seqience */
+  --_B0:1px;--_B1:2px;--_B2:4px;--_B3:16px;--_B4:256px;
+  /* Binary golden ratio sequence */
+  --_bgr0:2px;--_bgr1:4px;--_bgr2:6px;--_bgr3:10px;--_bgr4:16px;--_bgr5:26px;--_bgr6:42px;--_bgr7:68px;--_bgr8:110px;--_bgr9:178px;--_bgr10:288px;--_bgr11:466px;--_bgr12:754px;--_bgr13:1220px;--_bgr14:1974px;--_bgr15:3194px;
+
+  /* Golden ratio sequence */
+  --_G0:1px;--_G1:2px;--_G2:3px;--_G3:5px;--_G4:8px;--_G5:13px;--_G6:21px;--_G7:34px;--_G8:55px;--_G9:89px;--_G10:144px;--_G11:233px;--_G12:377px;--_G13:610px;--_G14:987px;
+  /* Golden ratio coefficient */
+  --GR: 1.618;
+
+  /* Triangle sequence sizes */
+  --_TR0:1px;--_TR1:3px;--_TR2:6px;--_TR3:10px;--_TR4:15px;--_TR5:21px;--_TR6:28px;--_TR7:36px;--_TR8:45px;--_TR9:55px;--_TR10:66px;--_TR11:78px;--_TR12:91px;--_TR13:105px;--_TR14:120px;--_TR15:136px;--_TR16:153px;--_TR17:171px;--_TR18:190px;--_TR19:210px;--_TR20:231px;--_TR21:253px;--_TR22:276px;
+
+  /* Character text size */
+  --_f0:10px;--_f1:12px;--_f2:14px;--_f3:16px;--_f4:18px;--_f5:20px;--_f6:22px;--_f7:24px;
+  /* Character heading size */
+  --_F0:24px;--_F1:28px;--_F2:32px;--_F3:36px;--_F4:40px;--_F5:48px;--_F6:64px;--_F7:72px;--_F8:96px;--_F9:128px;
+
+  /* Document width */
+  --_W0:320px;--_W1:480px;--_W2:640px;--_W3:1024px;--_W4:1280px;--_W5:1600px;--_W6:2048px;--_W7:2560px;--_W8:4096px;--_W9:8192px;
+
+  /* Bar height */
+  --_Bh0:24px;--_Bh1:26px;--_Bh2:30px;--_Bh3:32px;--_Bh4:40px;--_Bh5:48px;--_Bh6:52px;--_Bh7:54px;--_Bh8:56px;--_Bh9:60px;--_Bh10:64px;--_Bh11:72px;--_Bh12:90px;--_Bh13:94px;--_Bh14:128px;--_Bh15:156px;
+
+  /* Button height */
+  --_bh0:20px;--_bh1:32px;--_bh2:36px;--_bh3:42px;--_bh4:48px;--_bh5:54px;--_bh6:58px;--_bh7:64px;--_bh8:72px;--_bh9:96px;
+  /* Button width */
+  --_bw0:48px;--_bw1:72px;--_bw2:96px;--_bw3:128px;--_bw4:144px;--_bw5:192px;--_bw6:256px;--_bw7:384px;--_bw8:512px;--_bw9:1024px;
+
+  /* Percents */
+  --_P0:0%;--_P1:10%;--_P2:20%;--_P3:30%;--_P4:40%;--_P5:50%;--_P6:60%;--_P7:70%;--_P8:80%;--_P9:90%;--_P10:100%;
+  /* Percents BIN */
+  --_pBIN0:0.2;--_pBIN1:0.4;--_pBIN2:0.6;--_pBIN3:0.8;--_PBIN0:20%;--_PBIN1:40%;--_PBIN2:60%;--_PBIN3:80%;
+  /* Percents Golden Ratio */
+  --_PGR0:0.38;--_PGR1:0.62;
+
+/* COLORS */
+  /* Basic*/
+  --WHITE:#FFF;
+  --BLACK:#000;
+  --BLUE:#00F;
+  --RED:#F00;
+  --GREEN:#0F0;
+  --YELLOW:#FF0;
+  --AQUA:#0FF;
+  --MAGENTA:#F0F;
+  --GRAY:#777;
+
+  /* Prefered*/
+  --_black:#111;
+  --_white:#f1f1f1;
+  --_blue:#11e;
+  --_red:#f12;
+  --_green:#2d2;
+  --_yellow:#ff2;
+  --_aqua:#17e;
+  --_pink:#e17;
+  --_orange:#f71;
+
+  --_brown:#721;
+  --_beige:#fc7;
+
+  --SYSTEM_1-0:#111;
+  --SYSTEM_1-1:#333;
+  --SYSTEM_1-2:#555;
+  --SYSTEM_1-3:#777;
+  --SYSTEM_1-4:#999;
+  --SYSTEM_1-5:#acacac;
+  --SYSTEM_1-6:#bcbcbc;
+  --SYSTEM_1-7:#cdcdcd;
+  --SYSTEM_1-7:#dfdfdf;
+  --SYSTEM_1-8:#f1f1f1;
+}
+
+    /* Basics */
+    *{all: unset; margin: 0; padding: 0;}
+
+    /* Blocks */
+    style{display: none;}
+    script{display: none;}
 
     body{flex-direction: column; display: flex; overflow-x: hidden; align-items: center;}
     header{width: 100vw; height: 48px; background: var(--brand_2-0); display: flex; align-items: center; justify-content: space-around; box-sizing: border-box; color: #111; font-weight: 500;}
@@ -178,6 +273,23 @@
   .commercial-calculator-dropdown>div>form>.typeof>.value>input:checked+label{
     color: var(--SYSTEM_1-1);
   }
+  .commercial-calculator-dropdown>div.price>form>span{
+    display: flex;
+    gap: 1em;
+    width: 100%;
+  }
+  .commercial-calculator-dropdown>div.price>form>.typeof>.value{
+    width: 100%;
+    text-align: center;
+    margin: 0;
+  }
+  .commercial-calculator-dropdown>div.price>form>.typeof>.value>input{
+    width: 100%;
+    text-align: center; 
+  }
+  .commercial-calculator-dropdown>div.price>form>.typeof>.value:after{
+    display: none;
+  }
   .commercial-calculator-dropdown>div>form>span>input{
     width: 100%;
     height: 1.8em;
@@ -212,6 +324,47 @@
     border-radius: var(--_b4);
   }
   .commercial-calculator-dropdown>div>form>span>input:hover{
+    color: var(--SYSTEM_1-1);
+    transition: .5s;
+    
+    background: var(--brand_3-0);
+    background-size: 400% 100%;
+    animation: gradient 3s cubic-bezier(1, .5, .5, 1) infinite;
+  }
+  .commercial-calculator-dropdown>div>form>span>span>input{
+    width: 100%;
+    height: 1.8em;
+    font-size: 1em;
+    font-weight: 400;
+    color: var(--SYSTEM_1-2);
+    background: var(--white);
+
+    border-radius: var(--_b4);
+    transition: .5s;
+
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+  }
+  .commercial-calculator-dropdown>div>form>span>span{
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .commercial-calculator-dropdown>div>form>span>span::after{
+    content: "";
+
+    position: absolute;
+    z-index: -1;
+    left: calc(var(--_b1) * -1);
+    right: calc(var(--_b1) * -1);
+    bottom: calc(var(--_b1) * -1);
+    top: calc(var(--_b1) * -1);
+
+    background: var(--brand_2-4);
+    border-radius: var(--_b4);
+  }
+  .commercial-calculator-dropdown>div>form>span>span>input:hover{
     color: var(--SYSTEM_1-1);
     transition: .5s;
     
@@ -286,6 +439,7 @@
     border-radius: calc(var(--_b4) * 0.9);
   }
   }
+  .hidden{display: none !important;}
 
 
   </style>
@@ -295,33 +449,314 @@
       <form method="_POST" class="mid-column" name="device" id="device">
         <div class="typeof">
           <h3>Модель</h3>
-          <div class="value"><input type="radio" name="model" id="model0" value="5000" required oninvalid="this.setCustomValidity(' '); errorMessage(this)"><label for="model0">iPhone 6</label></div>
-          <div class="value"><input type="radio" name="model" id="model1" value="7000" required oninvalid="this.setCustomValidity(' '); errorMessage(this)"><label for="model1">iPhone 7</label></div>
-          <div class="value"><input type="radio" name="model" id="model2" value="9000" required oninvalid="this.setCustomValidity(' '); errorMessage(this)"><label for="model2">iPhone 8</label></div>
-          <div class="value"><input type="radio" name="model" id="model3" value="12000" required oninvalid="this.setCustomValidity(' '); errorMessage(this)"><label for="model3">iPhone 9</label></div>
-          <div class="value"><input type="radio" name="model" id="model4" value="14000" required oninvalid="this.setCustomValidity(' '); errorMessage(this)"><label for="model4">iPhone X</label></div>
-          <div class="value"><input type="radio" name="model" id="model5" value="20000" required oninvalid="this.setCustomValidity(' '); errorMessage(this)"><label for="model5">iPhone 11</label></div>
-          <div class="value"><input type="radio" name="model" id="model6" value="25000" required oninvalid="this.setCustomValidity(' '); errorMessage(this)"><label for="model6">iPhone 12</label></div>
-          <div class="value"><input type="radio" name="model" id="model7" value="30000" required oninvalid="this.setCustomValidity(' '); errorMessage(this)"><label for="model7">iPhone 13</label></div>
-          <div class="value"><input type="radio" name="model" id="model8" value="50000" required oninvalid="this.setCustomValidity(' '); errorMessage(this)"><label for="model8">iPhone 14</label></div>
+          <div class="value"><input type="radio" name="model" onclick="checkValue(this)" id="model0" value="43000" required oninvalid="this.setCustomValidity(' '); errorMessage(this)"><label for="model0">iPhone 13</label></div>
+          <div class="value"><input type="radio" name="model" onclick="checkValue(this)" id="model1" value="63000" required oninvalid="this.setCustomValidity(' '); errorMessage(this)"><label for="model1">iPhone 13 Pro Max</label></div>
+          <div class="value"><input type="radio" name="model" onclick="checkValue(this)" id="model2" value="57000" required oninvalid="this.setCustomValidity(' '); errorMessage(this)"><label for="model2">iPhone 13 Pro</label></div>
+          <div class="value"><input type="radio" name="model" onclick="checkValue(this)" id="model3" value="38000" required oninvalid="this.setCustomValidity(' '); errorMessage(this)"><label for="model3">iPhone 13 Mini</label></div>
+          <div class="value"><input type="radio" name="model" onclick="checkValue(this)" id="model4" value="75000" required oninvalid="this.setCustomValidity(' '); errorMessage(this)"><label for="model4">iPhone 14 Pro Max</label></div>
+          <div class="value"><input type="radio" name="model" onclick="checkValue(this)" id="model5" value="67000" required oninvalid="this.setCustomValidity(' '); errorMessage(this)"><label for="model5">iPhone 14 Pro</label></div>
+          <div class="value"><input type="radio" name="model" onclick="checkValue(this)" id="model6" value="33000" required oninvalid="this.setCustomValidity(' '); errorMessage(this)"><label for="model6">iPhone 12</label></div>
+          <div class="value"><input type="radio" name="model" onclick="checkValue(this)" id="model7" value="28000" required oninvalid="this.setCustomValidity(' '); errorMessage(this)"><label for="model7">iPhone 12 Mini</label></div>
+          <div class="value"><input type="radio" name="model" onclick="checkValue(this)" id="model8" value="38000" required oninvalid="this.setCustomValidity(' '); errorMessage(this)"><label for="model8">iPhone 12 Pro</label></div>
+          <div class="value"><input type="radio" name="model" onclick="checkValue(this)" id="model9" value="40000" required oninvalid="this.setCustomValidity(' '); errorMessage(this)"><label for="model9">iPhone 12 Pro Max</label></div>
+          <div class="value"><input type="radio" name="model" onclick="checkValue(this)" id="model10" value="22000" required oninvalid="this.setCustomValidity(' '); errorMessage(this)"><label for="model10">iPhone 11</label></div>
+          <div class="value"><input type="radio" name="model" onclick="checkValue(this)" id="model12" value="25000" required oninvalid="this.setCustomValidity(' '); errorMessage(this)"><label for="model12">iPhone 11 Pro Max</label></div>
+          <div class="value"><input type="radio" name="model" onclick="checkValue(this)" id="model11" value="28000" required oninvalid="this.setCustomValidity(' '); errorMessage(this)"><label for="model11">iPhone 11 Pro</label></div>
+          <div class="value"><input type="radio" name="model" onclick="checkValue(this)" id="model13" value="14000" required oninvalid="this.setCustomValidity(' '); errorMessage(this)"><label for="model13">iPhone X</label></div>
+          <div class="value"><input type="radio" name="model" onclick="checkValue(this)" id="model14" value="15000" required oninvalid="this.setCustomValidity(' '); errorMessage(this)"><label for="model14">iPhone XR</label></div>
+          <div class="value"><input type="radio" name="model" onclick="checkValue(this)" id="model15" value="18000" required oninvalid="this.setCustomValidity(' '); errorMessage(this)"><label for="model15">iPhone XS Max</label></div>
+          <div class="value"><input type="radio" name="model" onclick="checkValue(this)" id="model16" value="15000" required oninvalid="this.setCustomValidity(' '); errorMessage(this)"><label for="model16">iPhone XS</label></div>
+          <div class="value"><input type="radio" name="model" onclick="checkValue(this)" id="model17" value="9000" required oninvalid="this.setCustomValidity(' '); errorMessage(this)"><label for="model17">iPhone 8</label></div>
+          <div class="value"><input type="radio" name="model" onclick="checkValue(this)" id="model18" value="11000" required oninvalid="this.setCustomValidity(' '); errorMessage(this)"><label for="model18">iPhone 8 Plus</label></div>
+          <div class="value"><input type="radio" name="model" onclick="checkValue(this)" id="model19" value="5000" required oninvalid="this.setCustomValidity(' '); errorMessage(this)"><label for="model19">iPhone 7</label></div>
+          <div class="value"><input type="radio" name="model" onclick="checkValue(this)" id="model20" value="7000" required oninvalid="this.setCustomValidity(' '); errorMessage(this)"><label for="model20">iPhone 7 Plus</label></div>
+          <div class="value"><input type="radio" name="model" onclick="checkValue(this)" id="model21" value="3000" required oninvalid="this.setCustomValidity(' '); errorMessage(this)"><label for="model21">iPhone 6</label></div>
+          <div class="value"><input type="radio" name="model" onclick="checkValue(this)" id="model22" value="4000" required oninvalid="this.setCustomValidity(' '); errorMessage(this)"><label for="model22">iPhone 6S</label></div>
+          <div class="value"><input type="radio" name="model" onclick="checkValue(this)" id="model23" value="4000" required oninvalid="this.setCustomValidity(' '); errorMessage(this)"><label for="model23">iPhone 6 Plus</label></div>
+          <div class="value"><input type="radio" name="model" onclick="checkValue(this)" id="model24" value="5000" required oninvalid="this.setCustomValidity(' '); errorMessage(this)"><label for="model24">iPhone 6S Plus</label></div>
+          <div class="value"><input type="radio" name="model" onclick="checkValue(this)" id="model25" value="3000" required oninvalid="this.setCustomValidity(' '); errorMessage(this)"><label for="model25">iPhone SE 2017</label></div>
+          <div class="value"><input type="radio" name="model" onclick="checkValue(this)" id="model26" value="10000" required oninvalid="this.setCustomValidity(' '); errorMessage(this)"><label for="model26">iPhone SE 2020</label></div>
+          <div class="value"><input type="radio" name="model" onclick="checkValue(this)" id="model27" value="13000" required oninvalid="this.setCustomValidity(' '); errorMessage(this)"><label for="model27">iPhone SE 2022</label></div>
         </div>
         <div class="error"></div>
         <div class="typeof">
           <h3>Объем памяти</h3>
-          <div class="value"><input type="radio" name="size" id="size0" value="0.9" required oninvalid="this.setCustomValidity(' '); errorMessage(this)"><label for="size0">64gb</label></div>
-          <div class="value"><input type="radio" name="size" id="size1" value="1.1" required oninvalid="this.setCustomValidity(' '); errorMessage(this)"><label for="size1">128gb</label></div>
-          <div class="value"><input type="radio" name="size" id="size2" value="1.2" required oninvalid="this.setCustomValidity(' '); errorMessage(this)"><label for="size2">256gb</label></div>
-          <div class="value"><input type="radio" name="size" id="size3" value="1.4" required oninvalid="this.setCustomValidity(' '); errorMessage(this)"><label for="size3">512gb</label></div>
-        </div>
-        <div class="error"></div>
-        <div class="typeof">
-          <h3>Цвет</h3>
-          <div class="value"><input type="radio" name="color" id="color1" required oninvalid="this.setCustomValidity(' '); errorMessage(this)"><label for="color1">Silver</label></div>
-          <div class="value"><input type="radio" name="color" id="color2" required oninvalid="this.setCustomValidity(' '); errorMessage(this)"><label for="color2">Space Gray</label></div>
-          <div class="value"><input type="radio" name="color" id="color2" required oninvalid="this.setCustomValidity(' '); errorMessage(this)"><label for="color2">Gold</label></div>
+          <div class="value"><input type="radio" name="size" id="size0" value="0" required oninvalid="this.setCustomValidity(' '); errorMessage(this)"><label for="size0">16gb</label></div>
+          <div class="value"><input type="radio" name="size" id="size1" value="0" required oninvalid="this.setCustomValidity(' '); errorMessage(this)"><label for="size1">32gb</label></div>
+          <div class="value"><input type="radio" name="size" id="size2" value="0" required oninvalid="this.setCustomValidity(' '); errorMessage(this)"><label for="size2">64gb</label></div>
+          <div class="value"><input type="radio" name="size" id="size3" value="1" required oninvalid="this.setCustomValidity(' '); errorMessage(this)"><label for="size3">128gb</label></div>
+          <div class="value"><input type="radio" name="size" id="size4" value="1.2" required oninvalid="this.setCustomValidity(' '); errorMessage(this)"><label for="size4">256gb</label></div>
+          <div class="value"><input type="radio" name="size" id="size5" value="1.4" required oninvalid="this.setCustomValidity(' '); errorMessage(this)"><label for="size5">512gb</label></div>
+          <div class="value"><input type="radio" name="size" id="size6" value="0" required oninvalid="this.setCustomValidity(' '); errorMessage(this)"><label for="size6">1024gb</label></div>
         </div>
         <div class="error"></div>
         <span class="gradient-border"><input type="submit" value="Дальше" onclick="openNext(this)"></span>
+        <script>
+          function checkValue(e) {
+              size0.parentNode.classList.remove("hidden");
+              size1.parentNode.classList.remove("hidden");
+              size2.parentNode.classList.remove("hidden");
+              size3.parentNode.classList.remove("hidden");
+              size4.parentNode.classList.remove("hidden");
+              size5.parentNode.classList.remove("hidden");
+              size6.parentNode.classList.remove("hidden"); 
+
+            // console.log('work');
+            if(e === model0){
+              size0.parentNode.classList.add("hidden");
+              size1.parentNode.classList.add("hidden");
+              size2.parentNode.classList.add("hidden");
+              size3.value=1; 
+              size4.value=1.1; 
+              size5.value=1.4; 
+              size6.parentNode.classList.add("hidden"); 
+            }
+            if(e === model1){
+              size0.parentNode.classList.add("hidden");
+              size1.parentNode.classList.add("hidden");
+              size2.parentNode.classList.add("hidden");
+              size3.value=1; 
+              size4.value=1.03; 
+              size5.value=1.06; 
+              size6.value=1.11; 
+            }
+            if(e === model2){
+              size0.parentNode.classList.add("hidden");
+              size1.parentNode.classList.add("hidden");
+              size2.parentNode.classList.add("hidden");
+              size3.value=1; 
+              size4.value=1.05; 
+              size5.value=1.14; 
+              size6.value=1.18; 
+            }
+            if(e === model3){
+              size0.parentNode.classList.add("hidden");
+              size1.parentNode.classList.add("hidden");
+              size2.parentNode.classList.add("hidden");
+              size3.value=1; 
+              size4.value=1.05; 
+              size5.value=1.08; 
+              size6.parentNode.classList.add("hidden");; 
+            }
+            if(e === model4){
+              size0.parentNode.classList.add("hidden");
+              size1.parentNode.classList.add("hidden");
+              size2.parentNode.classList.add("hidden");
+              size3.value=1; 
+              size4.value=1.13; 
+              size5.value=1.19; 
+              size6.value=1.6; 
+            }
+            if(e === model5){
+              size0.parentNode.classList.add("hidden");
+              size1.parentNode.classList.add("hidden");
+              size2.parentNode.classList.add("hidden");
+              size3.value=1; 
+              size4.value=1.09; 
+              size5.value=1.15; 
+              size6.value=1.27; 
+            }
+            if(e === model6){
+              size0.parentNode.classList.add("hidden");
+              size1.parentNode.classList.add("hidden");
+              size2.value=1; 
+              size3.value=0.94; 
+              size4.value=0.89; 
+              size5.parentNode.classList.add("hidden");
+              size6.parentNode.classList.add("hidden");
+            }
+            if(e === model7){
+              size0.parentNode.classList.add("hidden");
+              size1.parentNode.classList.add("hidden");
+              size2.value=1; 
+              size3.value=0.93; 
+              size4.value=0.88; 
+              size5.parentNode.classList.add("hidden");
+              size6.parentNode.classList.add("hidden");
+            }
+            if(e === model8){
+              size0.parentNode.classList.add("hidden");
+              size1.parentNode.classList.add("hidden");
+              size2.parentNode.classList.add("hidden");
+              size3.value=1.00; 
+              size4.value=0.9; 
+              size5.value=0.88; 
+              size6.parentNode.classList.add("hidden");
+            }
+            if(e === model9){
+              size0.parentNode.classList.add("hidden");
+              size1.parentNode.classList.add("hidden");
+              size2.parentNode.classList.add("hidden");
+              size3.value=1.00; 
+              size4.value=0.87; 
+              size5.value=0.83; 
+              size6.parentNode.classList.add("hidden");
+            }
+            if(e === model10){
+              size0.parentNode.classList.add("hidden");
+              size1.parentNode.classList.add("hidden");
+              size2.value=1.00; 
+              size3.value=0.88; 
+              size4.value=0.85; 
+              size5.parentNode.classList.add("hidden");;
+              size6.parentNode.classList.add("hidden");
+            }
+            if(e === model11){
+              size0.parentNode.classList.add("hidden");
+              size1.parentNode.classList.add("hidden");
+              size2.value=1.00;
+              size3.parentNode.classList.add("hidden");
+              size4.value=0.83; 
+              size5.value=0.81; 
+              size6.parentNode.classList.add("hidden");
+            }
+            if(e === model12){
+              size0.parentNode.classList.add("hidden");
+              size1.parentNode.classList.add("hidden");
+              size2.value=1.00;
+              size3.parentNode.classList.add("hidden");
+              size4.value=0.82; 
+              size5.value=0.8; 
+              size6.parentNode.classList.add("hidden");
+            }
+            if(e === model13){
+              size0.parentNode.classList.add("hidden");
+              size1.parentNode.classList.add("hidden");
+              size2.value=1.00;
+              size3.parentNode.classList.add("hidden");
+              size4.value=0.88; 
+              size5.parentNode.classList.add("hidden");
+              size6.parentNode.classList.add("hidden");
+            }
+            if(e === model14){
+              size0.parentNode.classList.add("hidden");
+              size1.parentNode.classList.add("hidden");
+              size2.value=1.00;
+              size3.value=0.88; 
+              size4.value=0.83; 
+              size5.parentNode.classList.add("hidden");
+              size6.parentNode.classList.add("hidden");
+            }
+            if(e === model15){
+              size0.parentNode.classList.add("hidden");
+              size1.parentNode.classList.add("hidden");
+              size2.value=1.00;
+              size3.parentNode.classList.add("hidden");
+              size4.value=0.9; 
+              size5.value=0.86; 
+              size6.parentNode.classList.add("hidden");
+            }
+            if(e === model16){
+              size0.parentNode.classList.add("hidden");
+              size1.parentNode.classList.add("hidden");
+              size2.value=1.00;
+              size3.parentNode.classList.add("hidden");
+              size4.value=0.83; 
+              size5.value=0.75; 
+              size6.parentNode.classList.add("hidden");
+            }
+            if(e === model17){
+              size0.parentNode.classList.add("hidden");
+              size1.parentNode.classList.add("hidden");
+              size2.value=1.00;
+              size3.value=0.9; 
+              size4.value=0.82; 
+              size5.parentNode.classList.add("hidden");
+              size6.parentNode.classList.add("hidden");
+            }
+            if(e === model18){
+              size0.parentNode.classList.add("hidden");
+              size1.parentNode.classList.add("hidden");
+              size2.value=1.00;
+              size3.value=0.88; 
+              size4.value=0.85; 
+              size5.parentNode.classList.add("hidden");
+              size6.parentNode.classList.add("hidden");
+            }
+            if(e === model19){
+              size0.parentNode.classList.add("hidden");
+              size1.value=1.00;  
+              size2.parentNode.classList.add("hidden");
+              size3.value=0.71; 
+              size4.value=0.63; 
+              size5.parentNode.classList.add("hidden");
+              size6.parentNode.classList.add("hidden");
+            }
+            if(e === model20){
+              size0.parentNode.classList.add("hidden");
+              size1.value=1.00;  
+              size2.parentNode.classList.add("hidden");
+              size3.value=0.78; 
+              size4.value=0.7; 
+              size5.parentNode.classList.add("hidden");
+              size6.parentNode.classList.add("hidden");
+            }
+            if(e === model21){
+             size0.value=1.00;  
+              size1.value=1.00;  
+              size2.value=0.75; 
+              size3.value=0.6; 
+              size4.parentNode.classList.add("hidden");
+              size5.parentNode.classList.add("hidden");
+              size6.parentNode.classList.add("hidden");
+            }
+            if(e === model22){
+              size0.value=1.00;  
+              size1.value=1.00;  
+              size2.value=0.89; 
+              size3.value=0.73; 
+              size4.parentNode.classList.add("hidden");
+              size5.parentNode.classList.add("hidden");
+              size6.parentNode.classList.add("hidden");
+            }
+            if(e === model23){
+              size0.value=1.00;  
+              size1.value=1.00;  
+              size2.value=0.89; 
+              size3.value=0.73; 
+              size4.parentNode.classList.add("hidden");
+              size5.parentNode.classList.add("hidden");
+              size6.parentNode.classList.add("hidden");
+            }
+            if(e === model24){
+              size0.value=1.00;  
+              size1.value=1.00;  
+              size2.value=0.91; 
+              size3.value=0.83; 
+              size4.parentNode.classList.add("hidden");
+              size5.parentNode.classList.add("hidden");
+              size6.parentNode.classList.add("hidden");
+            }
+            if(e === model25){
+              size0.value=1.00;  
+              size1.value=1.00;  
+              size2.value=0.75; 
+              size3.value=0.6; 
+              size4.parentNode.classList.add("hidden");
+              size5.parentNode.classList.add("hidden");
+              size6.parentNode.classList.add("hidden");
+            }
+            if(e === model26){
+              size0.parentNode.classList.add("hidden");
+              size1.parentNode.classList.add("hidden");
+              size2.value=1.00;
+              size3.value=0.91; 
+              size4.value=0.83; 
+              size5.parentNode.classList.add("hidden");
+              size6.parentNode.classList.add("hidden");
+            }
+            if(e === model27){
+              size0.parentNode.classList.add("hidden");
+              size1.parentNode.classList.add("hidden");
+              size2.value=1.00;
+              size3.value=0.87; 
+              size4.value=0.76; 
+              size5.parentNode.classList.add("hidden");
+              size6.parentNode.classList.add("hidden");
+            }
+
+          }
+        </script>
       </form>
     </div>
     <div class="state">
@@ -330,21 +765,21 @@
         <div class="typeof">
           <h3>Техническое состояние</h3>
           <div class="value"><input type="radio" name="state" id="state1" value="1" required oninvalid="this.setCustomValidity(' '); errorMessage(this)"><label for="state1">Все работает</label></div>
-          <div class="value"><input type="radio" name="state" id="state2" value="0.8" required oninvalid="this.setCustomValidity(' '); errorMessage(this)"><label for="state2">Что то не работает</label></div>
+          <div class="value"><input type="radio" name="state" id="state2" value="0.7" required oninvalid="this.setCustomValidity(' '); errorMessage(this)"><label for="state2">Что то не работает</label></div>
         </div>
         <div class="error"></div>
         <div class="typeof">
           <h3>Ремонт</h3>
           <div class="value"><input type="radio" name="repair" id="repair1" value="0.8" required oninvalid="this.setCustomValidity(' '); errorMessage(this)"><label for="repair1">Ремонтировался</label></div>
-          <div class="value"><input type="radio" name="repair" id="repair2" value="1.1" required oninvalid="this.setCustomValidity(' '); errorMessage(this)"><label for="repair2">Не ремонтировался</label></div>
+          <div class="value"><input type="radio" name="repair" id="repair2" value="1" required oninvalid="this.setCustomValidity(' '); errorMessage(this)"><label for="repair2">Не ремонтировался</label></div>
         </div>
         <div class="error"></div>
         <div class="typeof">
           <h3>Внешний вид</h3>
-          <div class="value"><input type="radio" name="visible" id="visible1" value="1.2" required oninvalid="this.setCustomValidity(' '); errorMessage(this)"><label for="visible1">Как новый</label></div>
+          <div class="value"><input type="radio" name="visible" id="visible1" value="1.15" required oninvalid="this.setCustomValidity(' '); errorMessage(this)"><label for="visible1">Как новый</label></div>
           <div class="value"><input type="radio" name="visible" id="visible2" value="1" required oninvalid="this.setCustomValidity(' '); errorMessage(this)"><label for="visible2">Хорошее</label></div>
           <div class="value"><input type="radio" name="visible" id="visible3" value="0.8" required oninvalid="this.setCustomValidity(' '); errorMessage(this)"><label for="visible3">Среднее</label></div>
-          <div class="value"><input type="radio" name="visible" id="visible4" value="0.6" required oninvalid="this.setCustomValidity(' '); errorMessage(this)"><label for="visible4">Плохое</label></div>
+          <div class="value"><input type="radio" name="visible" id="visible4" value="0.5" required oninvalid="this.setCustomValidity(' '); errorMessage(this)"><label for="visible4">Плохое</label></div>
         </div>
         <div class="error"></div>
         <span class="gradient-border"><input type="submit" value="Дальше" onclick="openNext(this)"></span>
@@ -365,16 +800,17 @@
       <form method="_POST" class="mid-column" name="price" id="price">
         <div class="typeof">
           <h3>Мы заплатим за ваше устройство</h3>
-          <div class="value"><input type="text" name="priceFrom" id="minPrice" value="от 0" readonly></div>
-          <div class="value"><input type="text" name="priceTo" id="maxPrice" value="до 100000" readonly></div>
+          <div class="value" style="background-color: inherit;"><input type="text" name="priceFrom" id="minPrice" value="от 0" readonly style="margin:0;color:#333"></div>
+          <div class="value" style="background-color: inherit;"><input type="text" name="priceTo" id="maxPrice" value="до 100000" readonly></div>
         </div>
-        <span class="gradient-border"><input type="submit" value="Trade - in"></span>
-        <span class="gradient-border"><input type="submit" value="Продать"></span>
+        <span>
+          <span class="gradient-border"><input type="submit" value="Trade - in"></span>
+          <span class="gradient-border"><input type="submit" value="Продать"></span>
+        </span>
         <script>
         function errorMessage(e){
           if(e.parentNode.parentNode===e.parentNode.parentNode.parentNode.getElementsByClassName('typeof')[0])e.parentNode.parentNode.parentNode.getElementsByClassName('error')[0].innerHTML='Заполните поле модель';
           if(e.parentNode.parentNode===e.parentNode.parentNode.parentNode.getElementsByClassName('typeof')[1])e.parentNode.parentNode.parentNode.getElementsByClassName('error')[1].innerHTML='Заполните поле объем памяти';
-          if(e.parentNode.parentNode===e.parentNode.parentNode.parentNode.getElementsByClassName('typeof')[2])e.parentNode.parentNode.parentNode.getElementsByClassName('error')[2].innerHTML='Заполните поле цвет';
         }
       </script>
       </form>
@@ -390,7 +826,6 @@
         if(e.parentNode.parentNode.name==="device"){
         if(document.forms["device"]["model"].value=="")return;
         if(document.forms["device"]["size"].value=="")return;
-        if(document.forms["device"]["color"].value=="")return;
         e.parentNode.parentNode.parentNode.classList.remove('active');
         e.parentNode.parentNode.parentNode.parentNode.getElementsByClassName('state')[0].classList.add('active');
         } else if(e.parentNode.parentNode.name==="state"){
@@ -403,8 +838,8 @@
         let summ = parseFloat(phoneCalculator.querySelector('input[name="model"]:checked').value) * parseFloat(phoneCalculator.querySelector('input[name="size"]:checked').value) * parseFloat(phoneCalculator.querySelector('input[name="state"]:checked').value) * parseFloat(phoneCalculator.querySelector('input[name="repair"]:checked').value) * parseFloat(phoneCalculator.querySelector('input[name="visible"]:checked').value);
         console.log(summ);
         let sum = round(summ, 1000);
-        minPrice.value=(parseInt(sum) * 0.8).toFixed(0);
-        maxPrice.value=(parseInt(sum)).toFixed(0);
+        minPrice.value="от " + (parseInt(sum) * 0.8).toFixed(0);
+        maxPrice.value="до " + (parseInt(sum)).toFixed(0) +" рублей";
 
         e.parentNode.parentNode.parentNode.classList.remove('active');
         e.parentNode.parentNode.parentNode.parentNode.getElementsByClassName('price')[0].classList.add('active');
