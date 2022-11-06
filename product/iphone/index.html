@@ -258,8 +258,12 @@
     align-items: center;
     justify-content: space-around;
   }
-  .commercial-calculator-dropdown>.price>form>.typeof>.value>input[type="text"]{
+  .commercial-calculator-dropdown>.price>form>.typeof>.value>input[type="number"]{
     margin: var(--_b3);
+    width: min-content;
+  }
+  .commercial-calculator-dropdown>div.price>form>.typeof>.value{
+    justify-content: center;
   }
   .commercial-calculator-dropdown>div>form>.typeof>.value>label{
     color: var(--SYSTEM_1-2);
@@ -443,40 +447,44 @@
 
 
   </style>
+  <script>
+    let globalSumm = 0;
+    let globalDevice = "";
+  </script>
   <div class="commercial-calculator-dropdown" id="phoneCalculator">
     <div class="model active">
       <h2>Устройство <span>📱</span></h2>
       <form method="_POST" class="mid-column" name="device" id="device">
         <div class="typeof">
           <h3>Модель</h3>
-          <div class="value"><input type="radio" name="model" onclick="checkValue(this)" id="model0" value="43000" required oninvalid="this.setCustomValidity(' '); errorMessage(this)"><label for="model0">iPhone 13</label></div>
-          <div class="value"><input type="radio" name="model" onclick="checkValue(this)" id="model1" value="63000" required oninvalid="this.setCustomValidity(' '); errorMessage(this)"><label for="model1">iPhone 13 Pro Max</label></div>
-          <div class="value"><input type="radio" name="model" onclick="checkValue(this)" id="model2" value="57000" required oninvalid="this.setCustomValidity(' '); errorMessage(this)"><label for="model2">iPhone 13 Pro</label></div>
-          <div class="value"><input type="radio" name="model" onclick="checkValue(this)" id="model3" value="38000" required oninvalid="this.setCustomValidity(' '); errorMessage(this)"><label for="model3">iPhone 13 Mini</label></div>
-          <div class="value"><input type="radio" name="model" onclick="checkValue(this)" id="model4" value="75000" required oninvalid="this.setCustomValidity(' '); errorMessage(this)"><label for="model4">iPhone 14 Pro Max</label></div>
-          <div class="value"><input type="radio" name="model" onclick="checkValue(this)" id="model5" value="67000" required oninvalid="this.setCustomValidity(' '); errorMessage(this)"><label for="model5">iPhone 14 Pro</label></div>
-          <div class="value"><input type="radio" name="model" onclick="checkValue(this)" id="model6" value="33000" required oninvalid="this.setCustomValidity(' '); errorMessage(this)"><label for="model6">iPhone 12</label></div>
-          <div class="value"><input type="radio" name="model" onclick="checkValue(this)" id="model7" value="28000" required oninvalid="this.setCustomValidity(' '); errorMessage(this)"><label for="model7">iPhone 12 Mini</label></div>
-          <div class="value"><input type="radio" name="model" onclick="checkValue(this)" id="model8" value="38000" required oninvalid="this.setCustomValidity(' '); errorMessage(this)"><label for="model8">iPhone 12 Pro</label></div>
-          <div class="value"><input type="radio" name="model" onclick="checkValue(this)" id="model9" value="40000" required oninvalid="this.setCustomValidity(' '); errorMessage(this)"><label for="model9">iPhone 12 Pro Max</label></div>
-          <div class="value"><input type="radio" name="model" onclick="checkValue(this)" id="model10" value="22000" required oninvalid="this.setCustomValidity(' '); errorMessage(this)"><label for="model10">iPhone 11</label></div>
-          <div class="value"><input type="radio" name="model" onclick="checkValue(this)" id="model12" value="25000" required oninvalid="this.setCustomValidity(' '); errorMessage(this)"><label for="model12">iPhone 11 Pro Max</label></div>
-          <div class="value"><input type="radio" name="model" onclick="checkValue(this)" id="model11" value="28000" required oninvalid="this.setCustomValidity(' '); errorMessage(this)"><label for="model11">iPhone 11 Pro</label></div>
-          <div class="value"><input type="radio" name="model" onclick="checkValue(this)" id="model13" value="14000" required oninvalid="this.setCustomValidity(' '); errorMessage(this)"><label for="model13">iPhone X</label></div>
-          <div class="value"><input type="radio" name="model" onclick="checkValue(this)" id="model14" value="15000" required oninvalid="this.setCustomValidity(' '); errorMessage(this)"><label for="model14">iPhone XR</label></div>
-          <div class="value"><input type="radio" name="model" onclick="checkValue(this)" id="model15" value="18000" required oninvalid="this.setCustomValidity(' '); errorMessage(this)"><label for="model15">iPhone XS Max</label></div>
-          <div class="value"><input type="radio" name="model" onclick="checkValue(this)" id="model16" value="15000" required oninvalid="this.setCustomValidity(' '); errorMessage(this)"><label for="model16">iPhone XS</label></div>
-          <div class="value"><input type="radio" name="model" onclick="checkValue(this)" id="model17" value="9000" required oninvalid="this.setCustomValidity(' '); errorMessage(this)"><label for="model17">iPhone 8</label></div>
-          <div class="value"><input type="radio" name="model" onclick="checkValue(this)" id="model18" value="11000" required oninvalid="this.setCustomValidity(' '); errorMessage(this)"><label for="model18">iPhone 8 Plus</label></div>
-          <div class="value"><input type="radio" name="model" onclick="checkValue(this)" id="model19" value="5000" required oninvalid="this.setCustomValidity(' '); errorMessage(this)"><label for="model19">iPhone 7</label></div>
-          <div class="value"><input type="radio" name="model" onclick="checkValue(this)" id="model20" value="7000" required oninvalid="this.setCustomValidity(' '); errorMessage(this)"><label for="model20">iPhone 7 Plus</label></div>
-          <div class="value"><input type="radio" name="model" onclick="checkValue(this)" id="model21" value="3000" required oninvalid="this.setCustomValidity(' '); errorMessage(this)"><label for="model21">iPhone 6</label></div>
-          <div class="value"><input type="radio" name="model" onclick="checkValue(this)" id="model22" value="4000" required oninvalid="this.setCustomValidity(' '); errorMessage(this)"><label for="model22">iPhone 6S</label></div>
-          <div class="value"><input type="radio" name="model" onclick="checkValue(this)" id="model23" value="4000" required oninvalid="this.setCustomValidity(' '); errorMessage(this)"><label for="model23">iPhone 6 Plus</label></div>
-          <div class="value"><input type="radio" name="model" onclick="checkValue(this)" id="model24" value="5000" required oninvalid="this.setCustomValidity(' '); errorMessage(this)"><label for="model24">iPhone 6S Plus</label></div>
-          <div class="value"><input type="radio" name="model" onclick="checkValue(this)" id="model25" value="3000" required oninvalid="this.setCustomValidity(' '); errorMessage(this)"><label for="model25">iPhone SE 2017</label></div>
-          <div class="value"><input type="radio" name="model" onclick="checkValue(this)" id="model26" value="10000" required oninvalid="this.setCustomValidity(' '); errorMessage(this)"><label for="model26">iPhone SE 2020</label></div>
-          <div class="value"><input type="radio" name="model" onclick="checkValue(this)" id="model27" value="13000" required oninvalid="this.setCustomValidity(' '); errorMessage(this)"><label for="model27">iPhone SE 2022</label></div>
+          <div class="value"><input type="radio" name="model" onclick="checkValue(this)" id="model0" value="43000" required oninvalid="this.setCustomValidity(' '); errorMessage(this)" data-model="iPhone 13"><label for="model0">iPhone 13</label></div>
+          <div class="value"><input type="radio" name="model" onclick="checkValue(this)" id="model1" value="63000" required oninvalid="this.setCustomValidity(' '); errorMessage(this)" data-model="iPhone 13 Pro Max"><label for="model1">iPhone 13 Pro Max</label></div>
+          <div class="value"><input type="radio" name="model" onclick="checkValue(this)" id="model2" value="57000" required oninvalid="this.setCustomValidity(' '); errorMessage(this)" data-model="iPhone 13 Pro"><label for="model2">iPhone 13 Pro</label></div>
+          <div class="value"><input type="radio" name="model" onclick="checkValue(this)" id="model3" value="38000" required oninvalid="this.setCustomValidity(' '); errorMessage(this)" data-model="iPhone 13 Mini"><label for="model3">iPhone 13 Mini</label></div>
+          <div class="value"><input type="radio" name="model" onclick="checkValue(this)" id="model4" value="75000" required oninvalid="this.setCustomValidity(' '); errorMessage(this)" data-model="iPhone 14 Pro Max"><label for="model4">iPhone 14 Pro Max</label></div>
+          <div class="value"><input type="radio" name="model" onclick="checkValue(this)" id="model5" value="67000" required oninvalid="this.setCustomValidity(' '); errorMessage(this)" data-model="iPhone 14 Pro"><label for="model5">iPhone 14 Pro</label></div>
+          <div class="value"><input type="radio" name="model" onclick="checkValue(this)" id="model6" value="33000" required oninvalid="this.setCustomValidity(' '); errorMessage(this)" data-model="iPhone 12"><label for="model6">iPhone 12</label></div>
+          <div class="value"><input type="radio" name="model" onclick="checkValue(this)" id="model7" value="28000" required oninvalid="this.setCustomValidity(' '); errorMessage(this)" data-model="iPhone 12 Mini"><label for="model7">iPhone 12 Mini</label></div>
+          <div class="value"><input type="radio" name="model" onclick="checkValue(this)" id="model8" value="38000" required oninvalid="this.setCustomValidity(' '); errorMessage(this)" data-model="iPhone 12 Pro"><label for="model8">iPhone 12 Pro</label></div>
+          <div class="value"><input type="radio" name="model" onclick="checkValue(this)" id="model9" value="40000" required oninvalid="this.setCustomValidity(' '); errorMessage(this)" data-model="iPhone 12 Pro Max"><label for="model9">iPhone 12 Pro Max</label></div>
+          <div class="value"><input type="radio" name="model" onclick="checkValue(this)" id="model10" value="22000" required oninvalid="this.setCustomValidity(' '); errorMessage(this)" data-model="iPhone 11"><label for="model10">iPhone 11</label></div>
+          <div class="value"><input type="radio" name="model" onclick="checkValue(this)" id="model12" value="25000" required oninvalid="this.setCustomValidity(' '); errorMessage(this)" data-model="iPhone 11 Pro Max"><label for="model12">iPhone 11 Pro Max</label></div>
+          <div class="value"><input type="radio" name="model" onclick="checkValue(this)" id="model11" value="28000" required oninvalid="this.setCustomValidity(' '); errorMessage(this)" data-model="iPhone 11 Pro"><label for="model11">iPhone 11 Pro</label></div>
+          <div class="value"><input type="radio" name="model" onclick="checkValue(this)" id="model13" value="14000" required oninvalid="this.setCustomValidity(' '); errorMessage(this)" data-model="iPhone X"><label for="model13">iPhone X</label></div>
+          <div class="value"><input type="radio" name="model" onclick="checkValue(this)" id="model14" value="15000" required oninvalid="this.setCustomValidity(' '); errorMessage(this)" data-model="iPhone XR"><label for="model14">iPhone XR</label></div>
+          <div class="value"><input type="radio" name="model" onclick="checkValue(this)" id="model15" value="18000" required oninvalid="this.setCustomValidity(' '); errorMessage(this)" data-model="iPhone XS Max"><label for="model15">iPhone XS Max</label></div>
+          <div class="value"><input type="radio" name="model" onclick="checkValue(this)" id="model16" value="15000" required oninvalid="this.setCustomValidity(' '); errorMessage(this)" data-model="iPhone XS"><label for="model16">iPhone XS</label></div>
+          <div class="value"><input type="radio" name="model" onclick="checkValue(this)" id="model17" value="9000" required oninvalid="this.setCustomValidity(' '); errorMessage(this)" data-model="iPhone 8"><label for="model17">iPhone 8</label></div>
+          <div class="value"><input type="radio" name="model" onclick="checkValue(this)" id="model18" value="11000" required oninvalid="this.setCustomValidity(' '); errorMessage(this)" data-model="iPhone 8 Plus"><label for="model18">iPhone 8 Plus</label></div>
+          <div class="value"><input type="radio" name="model" onclick="checkValue(this)" id="model19" value="5000" required oninvalid="this.setCustomValidity(' '); errorMessage(this)" data-model="iPhone 7"><label for="model19">iPhone 7</label></div>
+          <div class="value"><input type="radio" name="model" onclick="checkValue(this)" id="model20" value="7000" required oninvalid="this.setCustomValidity(' '); errorMessage(this)" data-model="iPhone 7 Plus"><label for="model20">iPhone 7 Plus</label></div>
+          <div class="value"><input type="radio" name="model" onclick="checkValue(this)" id="model21" value="3000" required oninvalid="this.setCustomValidity(' '); errorMessage(this)" data-model="iPhone 6"><label for="model21">iPhone 6</label></div>
+          <div class="value"><input type="radio" name="model" onclick="checkValue(this)" id="model22" value="4000" required oninvalid="this.setCustomValidity(' '); errorMessage(this)" data-model="iPhone 6S"><label for="model22">iPhone 6S</label></div>
+          <div class="value"><input type="radio" name="model" onclick="checkValue(this)" id="model23" value="4000" required oninvalid="this.setCustomValidity(' '); errorMessage(this)" data-model="iPhone 6 Plus"><label for="model23">iPhone 6 Plus</label></div>
+          <div class="value"><input type="radio" name="model" onclick="checkValue(this)" id="model24" value="5000" required oninvalid="this.setCustomValidity(' '); errorMessage(this)" data-model="iPhone 6S Plus"><label for="model24">iPhone 6S Plus</label></div>
+          <div class="value"><input type="radio" name="model" onclick="checkValue(this)" id="model25" value="3000" required oninvalid="this.setCustomValidity(' '); errorMessage(this)" data-model="iPhone SE 2017"><label for="model25">iPhone SE 2017</label></div>
+          <div class="value"><input type="radio" name="model" onclick="checkValue(this)" id="model26" value="10000" required oninvalid="this.setCustomValidity(' '); errorMessage(this)" data-model="iPhone SE 2020"><label for="model26">iPhone SE 2020</label></div>
+          <div class="value"><input type="radio" name="model" onclick="checkValue(this)" id="model27" value="13000" required oninvalid="this.setCustomValidity(' '); errorMessage(this)" data-model="iPhone SE 2022"><label for="model27">iPhone SE 2022</label></div>
         </div>
         <div class="error"></div>
         <div class="typeof">
@@ -501,7 +509,7 @@
               size5.parentNode.classList.remove("hidden");
               size6.parentNode.classList.remove("hidden"); 
 
-            // console.log('work');
+            console.log('work');
             if(e === model0){
               size0.parentNode.classList.add("hidden");
               size1.parentNode.classList.add("hidden");
@@ -799,12 +807,13 @@
       <h2>Оценка <span>💰</span></h2>
       <form method="_POST" class="mid-column" name="price" id="price">
         <div class="typeof">
-          <h3>Мы заплатим за ваше устройство</h3>
-          <div class="value" style="background-color: inherit;"><input type="text" name="priceFrom" id="minPrice" value="от 0" readonly style="margin:0;color:#333"></div>
-          <div class="value" style="background-color: inherit;"><input type="text" name="priceTo" id="maxPrice" value="до 100000" readonly></div>
+          <h3>Мы заплатим за ваше устройство<br><span id="name1"></span></h3>
+          
+          <div class="value" style="background-color: inherit;"><span>от </span><input type="number" name="priceFrom" id="minPrice" value="0" readonly style="margin:0;color:#333"></div>
+          <div class="value" style="background-color: inherit;"><span>до </span><input type="number" name="priceTo" id="maxPrice" value="100000" readonly></div>
         </div>
         <span>
-          <span class="gradient-border"><input type="submit" value="Trade - in"></span>
+          <span class="gradient-border"><input type="submit" value="Trade - in" onclick="tradeIn();"></span>
           <span class="gradient-border"><input type="submit" value="Продать"></span>
         </span>
         <script>
@@ -837,9 +846,12 @@
         } else if(e.parentNode.parentNode.name==="complect"){
         let summ = parseFloat(phoneCalculator.querySelector('input[name="model"]:checked').value) * parseFloat(phoneCalculator.querySelector('input[name="size"]:checked').value) * parseFloat(phoneCalculator.querySelector('input[name="state"]:checked').value) * parseFloat(phoneCalculator.querySelector('input[name="repair"]:checked').value) * parseFloat(phoneCalculator.querySelector('input[name="visible"]:checked').value);
         console.log(summ);
+        name1.innerHTML=phoneCalculator.querySelector('input[name="model"]:checked').dataset.model;
         let sum = round(summ, 1000);
-        minPrice.value="от " + (parseInt(sum) * 0.8).toFixed(0);
-        maxPrice.value="до " + (parseInt(sum)).toFixed(0) +" рублей";
+        globalDevice = phoneCalculator.querySelector('input[name="model"]:checked').dataset.model;
+        globalSumm = (parseInt(sum)).toFixed(0) ;
+        minPrice.value=(parseInt(sum) * 0.8).toFixed(0);
+        maxPrice.value= (parseInt(sum)).toFixed(0) ;
 
         e.parentNode.parentNode.parentNode.classList.remove('active');
         e.parentNode.parentNode.parentNode.parentNode.getElementsByClassName('price')[0].classList.add('active');
@@ -856,7 +868,494 @@
           if(e.parentNode.parentNode===e.parentNode.parentNode.parentNode.getElementsByClassName('typeof')[2])e.parentNode.parentNode.parentNode.getElementsByClassName('error')[2].innerHTML='Заполните поле внешний вид';
         }
         }
+
+        function tradeIn(){checkValue1
+          tradeInModule.classList.toggle('hidden');
+          phoneCalculator.classList.toggle('hidden');
+        }
     </script>
+  </div>
+  <div id="tradeInModule" class="commercial-calculator-dropdown hidden">
+    <div class="model active">
+      <h2>Устройство <span>📱</span></h2>
+      <form method="_POST" class="mid-column" name="device1" id="device1">
+        <div class="typeof">
+          <style>
+            .value>button:hover{background: var(--brand_2-0); transition: 1s;}
+          </style>
+          <h3>Тип</h3>
+          <div class="value"><div style="text-align: center; width:100%; height: 2em; border-radius: 0.6em; cursor:pointer;transition: 1s;" onclick="newPhone.classList.add('hidden'); oldPhone.classList.remove('hidden')">Б/У</div></div>
+          <div class="value"><div style="text-align: center; width:100%; height: 2em; border-radius: 0.6em; cursor:pointer;transition: 1s;" onclick="newPhone.classList.remove('hidden'); oldPhone.classList.add('hidden')">Новый</div></div>
+        </div>
+        <div class="typeof" id="newPhone">
+          <h3>Модель</h3>
+          <div class="value"><input type="radio" name="modelchange" onclick="checkValue1(this)" id="modelchange0" value="60000"  oninvalid="this.setCustomValidity(' '); errorMessage(this)" data-modelchange="iPhone 13"><label for="modelchange0">iPhone 13</label></div>
+          <div class="value"><input type="radio" name="modelchange" onclick="checkValue1(this)" id="modelchange1" value="75000"  oninvalid="this.setCustomValidity(' '); errorMessage(this)" data-modelchange="iPhone 13 Pro Max"><label for="modelchange1">iPhone 13 Pro Max</label></div>
+          <div class="value"><input type="radio" name="modelchange" onclick="checkValue1(this)" id="modelchange2" value="65000"  oninvalid="this.setCustomValidity(' '); errorMessage(this)" data-modelchange="iPhone 13 Pro"><label for="modelchange2">iPhone 13 Pro</label></div>
+          <div class="value"><input type="radio" name="modelchange" onclick="checkValue1(this)" id="modelchange3" value="58000"  oninvalid="this.setCustomValidity(' '); errorMessage(this)" data-modelchange="iPhone 13 Mini"><label for="modelchange3">iPhone 13 Mini</label></div>
+          <div class="value"><input type="radio" name="modelchange" onclick="checkValue1(this)" id="modelchange4" value="90000"  oninvalid="this.setCustomValidity(' '); errorMessage(this)" data-modelchange="iPhone 14 Pro Max"><label for="modelchange4">iPhone 14 Pro Max</label></div>
+          <div class="value"><input type="radio" name="modelchange" onclick="checkValue1(this)" id="modelchange5" value="80000"  oninvalid="this.setCustomValidity(' '); errorMessage(this)" data-modelchange="iPhone 14 Pro"><label for="modelchange5">iPhone 14 Pro</label></div>
+          <div class="value"><input type="radio" name="modelchange" onclick="checkValue1(this)" id="modelchange6" value="61000"  oninvalid="this.setCustomValidity(' '); errorMessage(this)" data-modelchange="iPhone 14 Plus"><label for="modelchange6">iPhone 14 Plus</label></div>
+          <div class="value"><input type="radio" name="modelchange" onclick="checkValue1(this)" id="modelchange7" value="55000"  oninvalid="this.setCustomValidity(' '); errorMessage(this)" data-modelchange="iPhone 14"><label for="modelchange7">iPhone 14</label></div>
+          <div class="value"><input type="radio" name="modelchange" onclick="checkValue1(this)" id="modelchange8" value="44000"  oninvalid="this.setCustomValidity(' '); errorMessage(this)" data-modelchange="iPhone 12"><label for="modelchange8">iPhone 12</label></div>
+          <div class="value"><input type="radio" name="modelchange" onclick="checkValue1(this)" id="modelchange9" value="38000"  oninvalid="this.setCustomValidity(' '); errorMessage(this)" data-modelchange="iPhone 11"><label for="modelchange9">iPhone 11</label></div>
+          <div class="value"><input type="radio" name="modelchange" onclick="checkValue1(this)" id="modelchange10" value="27000"  oninvalid="this.setCustomValidity(' '); errorMessage(this)" data-modelchange="iPhone SE 2020"><label for="modelchange10">iPhone SE 2020</label></div>
+          <div class="value"><input type="radio" name="modelchange" onclick="checkValue1(this)" id="modelchange11" value="26000"  oninvalid="this.setCustomValidity(' '); errorMessage(this)" data-modelchange="iPhone SE 2022"><label for="modelchange11">iPhone SE 2022</label></div>
+        </div>
+        <div class="typeof hidden" id="oldPhone">
+          <h3>Модель</h3>
+          <div class="value"><input type="radio" name="modelchange" onclick="checkValue2(this)" id="modeloldchange0" value="50000"  oninvalid="this.setCustomValidity(' '); errorMessage(this)" data-modelchange="iPhone 13"><label for="modeloldchange0">iPhone 13</label></div>
+          <div class="value"><input type="radio" name="modelchange" onclick="checkValue2(this)" id="modeloldchange1" value="70000"  oninvalid="this.setCustomValidity(' '); errorMessage(this)" data-modelchange="iPhone 13 Pro Max"><label for="modeloldchange1">iPhone 13 Pro Max</label></div>
+          <div class="value"><input type="radio" name="modelchange" onclick="checkValue2(this)" id="modeloldchange2" value="65000"  oninvalid="this.setCustomValidity(' '); errorMessage(this)" data-modelchange="iPhone 13 Pro"><label for="modeloldchange2">iPhone 13 Pro</label></div>
+          <div class="value"><input type="radio" name="modelchange" onclick="checkValue2(this)" id="modeloldchange3" value="46000"  oninvalid="this.setCustomValidity(' '); errorMessage(this)" data-modelchange="iPhone 13 Mini"><label for="modeloldchange3">iPhone 13 Mini</label></div>
+          <div class="value"><input type="radio" name="modelchange" onclick="checkValue2(this)" id="modeloldchange4" value="60000"  oninvalid="this.setCustomValidity(' '); errorMessage(this)" data-modelchange="iPhone 12 Pro Max"><label for="modeloldchange4">iPhone 12 Pro Max</label></div>
+          <div class="value"><input type="radio" name="modelchange" onclick="checkValue2(this)" id="modeloldchange5" value="50000"  oninvalid="this.setCustomValidity(' '); errorMessage(this)" data-modelchange="iPhone 12 Pro"><label for="modeloldchange5">iPhone 12 Pro</label></div>
+          <div class="value"><input type="radio" name="modelchange" onclick="checkValue2(this)" id="modeloldchange6" value="45000"  oninvalid="this.setCustomValidity(' '); errorMessage(this)" data-modelchange="iPhone 12"><label for="modeloldchange6">iPhone 12</label></div>
+          <div class="value"><input type="radio" name="modelchange" onclick="checkValue2(this)" id="modeloldchange7" value="40000"  oninvalid="this.setCustomValidity(' '); errorMessage(this)" data-modelchange="iPhone 12 Mini"><label for="modeloldchange7">iPhone 12 Mini</label></div>
+          <div class="value"><input type="radio" name="modelchange" onclick="checkValue2(this)" id="modeloldchange9" value="32000"  oninvalid="this.setCustomValidity(' '); errorMessage(this)" data-modelchange="iPhone 11 Pro"><label for="modeloldchange9">iPhone 11 Pro</label></div>
+          <div class="value"><input type="radio" name="modelchange" onclick="checkValue2(this)" id="modeloldchange10" value="40000"  oninvalid="this.setCustomValidity(' '); errorMessage(this)" data-modelchange="iPhone 11 Pro Max"><label for="modeloldchange10">iPhone 11 Pro Max</label></div>
+          <div class="value"><input type="radio" name="modelchange" onclick="checkValue2(this)" id="modeloldchange11" value="32000"  oninvalid="this.setCustomValidity(' '); errorMessage(this)" data-modelchange="iPhone 11"><label for="modeloldchange11">iPhone 11</label></div>
+          <div class="value"><input type="radio" name="modelchange" onclick="checkValue2(this)" id="modeloldchange12" value="28000"  oninvalid="this.setCustomValidity(' '); errorMessage(this)" data-modelchange="iPhone XS Max"><label for="modeloldchange12">iPhone XS Max</label></div>
+          <div class="value"><input type="radio" name="modelchange" onclick="checkValue2(this)" id="modeloldchange111" value="20000"  oninvalid="this.setCustomValidity(' '); errorMessage(this)" data-modelchange="iPhone SE 2020"><label for="modeloldchange111">iPhone SE 2020</label></div>
+          <div class="value"><input type="radio" name="modelchange" onclick="checkValue2(this)" id="modeloldchange14" value="24000"  oninvalid="this.setCustomValidity(' '); errorMessage(this)" data-modelchange="iPhone XS"><label for="modeloldchange14">iPhone XS</label></div>
+          <div class="value"><input type="radio" name="modelchange" onclick="checkValue2(this)" id="modeloldchange15" value="22000"  oninvalid="this.setCustomValidity(' '); errorMessage(this)" data-modelchange="iPhone XR"><label for="modeloldchange15">iPhone XR</label></div>
+          <div class="value"><input type="radio" name="modelchange" onclick="checkValue2(this)" id="modeloldchange17" value="20000"  oninvalid="this.setCustomValidity(' '); errorMessage(this)" data-modelchange="iPhone X"><label for="modeloldchange17">iPhone X</label></div>
+          <div class="value"><input type="radio" name="modelchange" onclick="checkValue2(this)" id="modeloldchange18" value="14000"  oninvalid="this.setCustomValidity(' '); errorMessage(this)" data-modelchange="iPhone 8"><label for="modeloldchange18">iPhone 8</label></div>
+          <div class="value"><input type="radio" name="modelchange" onclick="checkValue2(this)" id="modeloldchange19" value="16000"  oninvalid="this.setCustomValidity(' '); errorMessage(this)" data-modelchange="iPhone 8 Plus"><label for="modeloldchange19">iPhone 8 Plus</label></div>
+          <div class="value"><input type="radio" name="modelchange" onclick="checkValue2(this)" id="modeloldchange20" value="10000"  oninvalid="this.setCustomValidity(' '); errorMessage(this)" data-modelchange="iPhone 7"><label for="modeloldchange20">iPhone 7</label></div>
+          <div class="value"><input type="radio" name="modelchange" onclick="checkValue2(this)" id="modeloldchange21" value="12000"  oninvalid="this.setCustomValidity(' '); errorMessage(this)" data-modelchange="iPhone 7 Plus"><label for="modeloldchange21">iPhone 7 Plus</label></div>
+          <div class="value"><input type="radio" name="modelchange" onclick="checkValue2(this)" id="modeloldchange22" value="5000"  oninvalid="this.setCustomValidity(' '); errorMessage(this)" data-modelchange="iPhone 6"><label for="modeloldchange22">iPhone 6</label></div>
+          <div class="value"><input type="radio" name="modelchange" onclick="checkValue2(this)" id="modeloldchange23" value="6000"  oninvalid="this.setCustomValidity(' '); errorMessage(this)" data-modelchange="iPhone 6S"><label for="modeloldchange23">iPhone 6S</label></div>
+          <div class="value"><input type="radio" name="modelchange" onclick="checkValue2(this)" id="modeloldchange24" value="6000"  oninvalid="this.setCustomValidity(' '); errorMessage(this)" data-modelchange="iPhone 6 Plus"><label for="modeloldchange24">iPhone 6 Plus</label></div>
+          <div class="value"><input type="radio" name="modelchange" onclick="checkValue2(this)" id="modeloldchange25" value="7500"  oninvalid="this.setCustomValidity(' '); errorMessage(this)" data-modelchange="iPhone 6S Plus"><label for="modeloldchange25">iPhone 6S Plus</label></div>
+          <div class="value"><input type="radio" name="modelchange" onclick="checkValue2(this)" id="modeloldchange26" value="6000"  oninvalid="this.setCustomValidity(' '); errorMessage(this)" data-modelchange="iPhone SE 2017"><label for="modeloldchange26">iPhone SE 2017</label></div>
+        </div>   
+        <div class="error"></div>
+        <div class="typeof">
+          <h3>Объем памяти</h3>
+          <div class="value"><input type="radio" name="sizechange" id="sizechange0" value="0" required oninvalid="this.setCustomValidity(' '); errorMessage(this)"><label for="sizechange0">16gb</label></div>
+          <div class="value"><input type="radio" name="sizechange" id="sizechange1" value="0" required oninvalid="this.setCustomValidity(' '); errorMessage(this)"><label for="sizechange1">32gb</label></div>
+          <div class="value"><input type="radio" name="sizechange" id="sizechange2" value="0" required oninvalid="this.setCustomValidity(' '); errorMessage(this)"><label for="sizechange2">64gb</label></div>
+          <div class="value"><input type="radio" name="sizechange" id="sizechange3" value="1" required oninvalid="this.setCustomValidity(' '); errorMessage(this)"><label for="sizechange3">128gb</label></div>
+          <div class="value"><input type="radio" name="sizechange" id="sizechange4" value="1.2" required oninvalid="this.setCustomValidity(' '); errorMessage(this)"><label for="sizechange4">256gb</label></div>
+          <div class="value"><input type="radio" name="sizechange" id="sizechange5" value="1.4" required oninvalid="this.setCustomValidity(' '); errorMessage(this)"><label for="sizechange5">512gb</label></div>
+          <div class="value"><input type="radio" name="sizechange" id="sizechange6" value="0" required oninvalid="this.setCustomValidity(' '); errorMessage(this)"><label for="sizechange6">1024gb</label></div>
+        </div>
+        <div class="error"></div>
+        <div class="typeof">
+          <h3>Цвет</h3>
+          <div class="value"><input type="radio" name="color" id="color0" value="0" required oninvalid="this.setCustomValidity(' '); errorMessage(this)"><label for="color0">Цвет</label></div>
+          <div class="value"><input type="radio" name="color" id="color1" value="0" required oninvalid="this.setCustomValidity(' '); errorMessage(this)"><label for="color1">Цвет</label></div>
+          <div class="value"><input type="radio" name="color" id="color2" value="0" required oninvalid="this.setCustomValidity(' '); errorMessage(this)"><label for="color2">Цвет</label></div>
+          <div class="value"><input type="radio" name="color" id="color3" value="1" required oninvalid="this.setCustomValidity(' '); errorMessage(this)"><label for="color3">Цвет</label></div>
+          <div class="value"><input type="radio" name="color" id="color4" value="1.2" required oninvalid="this.setCustomValidity(' '); errorMessage(this)"><label for="color4">Цвет</label></div>
+          <div class="value"><input type="radio" name="color" id="color5" value="1.4" required oninvalid="this.setCustomValidity(' '); errorMessage(this)"><label for="color5">Цвет</label></div>
+          <div class="value"><input type="radio" name="color" id="color6" value="0" required oninvalid="this.setCustomValidity(' '); errorMessage(this)"><label for="color6">Цвет</label></div>
+        </div>
+        <span class="gradient-border"><input type="submit" value="Дальше" onclick="openNext1(this)"></span>
+        <script>
+          function checkValue1(e) {
+              sizechange0.parentNode.classList.remove("hidden");
+              sizechange1.parentNode.classList.remove("hidden");
+              sizechange2.parentNode.classList.remove("hidden");
+              sizechange3.parentNode.classList.remove("hidden");
+              sizechange4.parentNode.classList.remove("hidden");
+              sizechange5.parentNode.classList.remove("hidden");
+              sizechange6.parentNode.classList.remove("hidden"); 
+
+            // console.log('work');
+            if(e === modelchange0){
+              sizechange0.parentNode.classList.add("hidden");
+              sizechange1.parentNode.classList.add("hidden");
+              sizechange2.parentNode.classList.add("hidden");
+              sizechange3.value=0.87; 
+              sizechange4.value=1; 
+              sizechange5.value=1.17; 
+              sizechange6.parentNode.classList.add("hidden"); 
+            }
+            if(e === modelchange1){
+              sizechange0.parentNode.classList.add("hidden");
+              sizechange1.parentNode.classList.add("hidden");
+              sizechange2.parentNode.classList.add("hidden");
+              sizechange3.value=1; 
+              sizechange4.value=1.11; 
+              sizechange5.value=1.23; 
+              sizechange6.value=1.45; 
+            }
+            if(e === modelchange2){
+              sizechange0.parentNode.classList.add("hidden");
+              sizechange1.parentNode.classList.add("hidden");
+              sizechange2.parentNode.classList.add("hidden");
+              sizechange3.value=1; 
+              sizechange4.value=1.15; 
+              sizechange5.value=1.34; 
+              sizechange6.parentNode.classList.add("hidden");
+            }
+            if(e === modelchange3){
+              sizechange0.parentNode.classList.add("hidden");
+              sizechange1.parentNode.classList.add("hidden");
+              sizechange2.parentNode.classList.add("hidden");
+              sizechange3.value=0.81; 
+              sizechange4.value=1; 
+              sizechange5.value=1.09; 
+              sizechange6.parentNode.classList.add("hidden");; 
+            }
+            if(e === modelchange4){
+              sizechange0.parentNode.classList.add("hidden");
+              sizechange1.parentNode.classList.add("hidden");
+              sizechange2.parentNode.classList.add("hidden");
+              sizechange3.value=1; 
+              sizechange4.value=1.09; 
+              sizechange5.value=1.42; 
+              sizechange6.parentNode.classList.add("hidden");
+            }
+            if(e === modelchange5){
+              sizechange0.parentNode.classList.add("hidden");
+              sizechange1.parentNode.classList.add("hidden");
+              sizechange2.parentNode.classList.add("hidden");
+              sizechange3.value=1; 
+              sizechange4.value=1.13; 
+              sizechange5.value=1.48; 
+              sizechange6.parentNode.classList.add("hidden");
+            }
+            if(e === modelchange6){
+              sizechange0.parentNode.classList.add("hidden");
+              sizechange1.parentNode.classList.add("hidden");
+              sizechange2.parentNode.classList.add("hidden");
+              sizechange3.value=1; 
+              sizechange4.value=1.13; 
+              sizechange5.value=1.46; 
+              sizechange6.parentNode.classList.add("hidden");
+            }
+            if(e === modelchange7){
+              sizechange0.parentNode.classList.add("hidden");
+              sizechange1.parentNode.classList.add("hidden");
+              sizechange2.parentNode.classList.add("hidden");
+              sizechange3.value=1; 
+              sizechange4.value=1.18; 
+              sizechange5.value=1.33; 
+              sizechange6.parentNode.classList.add("hidden");
+            }
+            if(e === modelchange8){
+              sizechange0.parentNode.classList.add("hidden");
+              sizechange1.parentNode.classList.add("hidden");
+              sizechange2.value=0.88; 
+              sizechange3.value=1.00; 
+              sizechange4.value=1.18; 
+              sizechange5.parentNode.classList.add("hidden");
+              sizechange6.parentNode.classList.add("hidden");
+            }
+            if(e === modelchange9){
+              sizechange0.parentNode.classList.add("hidden");
+              sizechange1.parentNode.classList.add("hidden");
+              sizechange2.value=0.89; 
+              sizechange3.value=1.00; 
+              sizechange4.value=1.26; 
+              sizechange5.parentNode.classList.add("hidden");
+              sizechange6.parentNode.classList.add("hidden");
+            }
+            if(e === modelchange10){
+              sizechange0.parentNode.classList.add("hidden");
+              sizechange1.parentNode.classList.add("hidden");
+              sizechange2.value=0.89; 
+              sizechange3.value=1; 
+              sizechange4.value=1.09; 
+              sizechange5.parentNode.classList.add("hidden");;
+              sizechange6.parentNode.classList.add("hidden");
+            }
+            if(e === modelchange11){
+              sizechange0.parentNode.classList.add("hidden");
+              sizechange1.parentNode.classList.add("hidden");
+              sizechange2.value=1.00;
+              sizechange3.parentNode.classList.add("hidden");
+              sizechange4.parentNode.classList.add("hidden");
+              sizechange5.parentNode.classList.add("hidden");
+              sizechange6.parentNode.classList.add("hidden");
+            }
+          }
+
+            function checkValue2(e) {
+              sizechange0.parentNode.classList.remove("hidden");
+              sizechange1.parentNode.classList.remove("hidden");
+              sizechange2.parentNode.classList.remove("hidden");
+              sizechange3.parentNode.classList.remove("hidden");
+              sizechange4.parentNode.classList.remove("hidden");
+              sizechange5.parentNode.classList.remove("hidden");
+              sizechange6.parentNode.classList.remove("hidden"); 
+
+            // console.log('work');
+            if(e === modeloldchange0){
+              sizechange0.parentNode.classList.add("hidden");
+              sizechange1.parentNode.classList.add("hidden");
+              sizechange2.parentNode.classList.add("hidden");
+              sizechange3.value=0.9;
+              sizechange4.value=1; 
+              sizechange5.value=1.1; 
+              sizechange6.parentNode.classList.add("hidden"); 
+            }
+            if(e === modeloldchange1){
+              sizechange0.parentNode.classList.add("hidden");
+              sizechange1.parentNode.classList.add("hidden");
+              sizechange2.parentNode.classList.add("hidden");
+              sizechange3.value=0.93; 
+              sizechange4.value=1; 
+              sizechange5.value=1.07; 
+              sizechange6.parentNode.classList.add("hidden");
+            }
+            if(e === modeloldchange2){
+              sizechange0.parentNode.classList.add("hidden");
+              sizechange1.parentNode.classList.add("hidden");
+              sizechange2.parentNode.classList.add("hidden");
+              sizechange3.value=0.92; 
+              sizechange4.value=1; 
+              sizechange5.value=1.08; 
+              sizechange6.parentNode.classList.add("hidden");
+            }
+            if(e === modeloldchange3){
+              sizechange0.parentNode.classList.add("hidden");
+              sizechange1.parentNode.classList.add("hidden");
+              sizechange2.parentNode.classList.add("hidden");
+              sizechange3.value=0.91; 
+              sizechange4.value=1; 
+              sizechange5.value=1.09; 
+              sizechange6.parentNode.classList.add("hidden");; 
+            }
+            if(e === modeloldchange4){
+              sizechange0.parentNode.classList.add("hidden");
+              sizechange1.parentNode.classList.add("hidden");
+              sizechange2.parentNode.classList.add("hidden");
+              sizechange3.value=0.92; 
+              sizechange4.value=1; 
+              sizechange5.value=1.13; 
+              sizechange6.parentNode.classList.add("hidden");
+            }
+            if(e === modeloldchange5){
+              sizechange0.parentNode.classList.add("hidden");
+              sizechange1.parentNode.classList.add("hidden");
+              sizechange2.parentNode.classList.add("hidden");
+              sizechange3.value=0.9; 
+              sizechange4.value=1; 
+              sizechange5.value=1.1; 
+              sizechange6.parentNode.classList.add("hidden");
+            }
+            if(e === modeloldchange6){
+              sizechange0.parentNode.classList.add("hidden");
+              sizechange1.parentNode.classList.add("hidden");
+              sizechange2.value=0.92; 
+              sizechange3.value=1; 
+              sizechange4.value=1.18; 
+              sizechange5.parentNode.classList.add("hidden");
+              sizechange6.parentNode.classList.add("hidden");
+            }
+            if(e === modeloldchange7){
+              sizechange0.parentNode.classList.add("hidden");
+              sizechange1.parentNode.classList.add("hidden");
+              sizechange2.value=0.89; 
+              sizechange3.value=1; 
+              sizechange4.value=1.11; 
+              sizechange5.parentNode.classList.add("hidden");
+              sizechange6.parentNode.classList.add("hidden");
+            }
+            if(e === modeloldchange9){
+              sizechange0.parentNode.classList.add("hidden");
+              sizechange1.parentNode.classList.add("hidden");
+              sizechange2.value=0.88; 
+              sizechange3.parentNode.classList.add("hidden");
+              sizechange4.value=1; 
+              sizechange5.value=1.13; 
+              sizechange6.parentNode.classList.add("hidden");
+            }
+            if(e === modeloldchange10){
+              sizechange0.parentNode.classList.add("hidden");
+              sizechange1.parentNode.classList.add("hidden");
+              sizechange2.value=0.85; 
+              sizechange3.parentNode.classList.add("hidden");
+              sizechange4.value=1; 
+              sizechange5.value=1.13; 
+              sizechange6.parentNode.classList.add("hidden");
+            }
+            if(e === modeloldchange111){
+              sizechange0.parentNode.classList.add("hidden");
+              sizechange1.parentNode.classList.add("hidden");
+              sizechange2.value=0.75;
+              sizechange3.value=0.9; 
+              sizechange4.value=1; 
+              sizechange5.parentNode.classList.add("hidden");
+              sizechange6.parentNode.classList.add("hidden");
+            }
+            if(e === modeloldchange12){
+              sizechange0.parentNode.classList.add("hidden");
+              sizechange1.parentNode.classList.add("hidden");
+              sizechange2.value=0.86;
+              sizechange3.parentNode.classList.add("hidden");
+              sizechange4.value=1; 
+              sizechange5.value=1.14; 
+              sizechange6.parentNode.classList.add("hidden");
+            }
+            if(e === modeloldchange14){
+              sizechange0.parentNode.classList.add("hidden");
+              sizechange1.parentNode.classList.add("hidden");
+              sizechange2.value=0.83;
+              sizechange3.parentNode.classList.add("hidden");
+              sizechange4.value=1; 
+              sizechange5.value=1.17; 
+              sizechange6.parentNode.classList.add("hidden");
+            }
+            if(e === modeloldchange15){
+              sizechange0.parentNode.classList.add("hidden");
+              sizechange1.parentNode.classList.add("hidden");
+              sizechange2.value=0.82;
+              sizechange3.value=0.9; 
+              sizechange4.value=1; 
+              sizechange5.parentNode.classList.add("hidden");
+              sizechange6.parentNode.classList.add("hidden");
+            }
+            if(e === modeloldchange17){
+              sizechange0.parentNode.classList.add("hidden");
+              sizechange1.parentNode.classList.add("hidden");
+              sizechange2.value=0.8;
+              sizechange3.parentNode.classList.add("hidden");
+              sizechange4.value=1; 
+              sizechange5.parentNode.classList.add("hidden");
+              sizechange6.parentNode.classList.add("hidden");
+            }
+            if(e === modeloldchange18){
+              sizechange0.parentNode.classList.add("hidden");
+              sizechange1.parentNode.classList.add("hidden");
+              sizechange2.value=0.86;
+              sizechange3.value=1; 
+              sizechange4.value=1.14; 
+              sizechange5.parentNode.classList.add("hidden");
+              sizechange6.parentNode.classList.add("hidden");
+            }
+            if(e === modeloldchange19){
+              sizechange0.parentNode.classList.add("hidden");
+              sizechange1.parentNode.classList.add("hidden");
+              sizechange2.value=0.88;
+              sizechange3.value=1; 
+              sizechange4.value=1.13; 
+              sizechange5.parentNode.classList.add("hidden");
+              sizechange6.parentNode.classList.add("hidden");
+            }
+            if(e === modeloldchange20){
+              sizechange0.parentNode.classList.add("hidden");
+              sizechange1.value=0.8;  
+              sizechange2.parentNode.classList.add("hidden");
+              sizechange3.value=1; 
+              sizechange4.value=1.2; 
+              sizechange5.parentNode.classList.add("hidden");
+              sizechange6.parentNode.classList.add("hidden");
+            }
+            if(e === modeloldchange21){
+              sizechange0.parentNode.classList.add("hidden");
+              sizechange1.value=0.83;  
+              sizechange2.parentNode.classList.add("hidden");
+              sizechange3.value=1; 
+              sizechange4.value=1.25; 
+              sizechange5.parentNode.classList.add("hidden");
+              sizechange6.parentNode.classList.add("hidden");
+            }
+            if(e === modeloldchange22){
+              sizechange0.value=0.8;  
+              sizechange1.value=1;  
+              sizechange2.value=1.1; 
+              sizechange3.value=1.2; 
+              sizechange4.parentNode.classList.add("hidden");
+              sizechange5.parentNode.classList.add("hidden");
+              sizechange6.parentNode.classList.add("hidden");
+            }
+            if(e === modeloldchange23){
+              sizechange0.value=0.83;  
+              sizechange1.value=1.00;  
+              sizechange2.value=1.17; 
+              sizechange3.value=1.33; 
+              sizechange4.parentNode.classList.add("hidden");
+              sizechange5.parentNode.classList.add("hidden");
+              sizechange6.parentNode.classList.add("hidden");
+            }
+            if(e === modeloldchange24){
+              sizechange0.value=0.83;  
+              sizechange1.value=1.00;  
+              sizechange2.value=1.08; 
+              sizechange3.value=1.17; 
+              sizechange4.parentNode.classList.add("hidden");
+              sizechange5.parentNode.classList.add("hidden");
+              sizechange6.parentNode.classList.add("hidden");
+            }
+            if(e === modeloldchange25){
+              sizechange0.value=0.8;  
+              sizechange1.value=1.00;  
+              sizechange2.value=1.2; 
+              sizechange3.value=1.33; 
+              sizechange4.parentNode.classList.add("hidden");
+              sizechange5.parentNode.classList.add("hidden");
+              sizechange6.parentNode.classList.add("hidden");
+            }
+            if(e === modeloldchange26){
+              sizechange0.value=0.83;  
+              sizechange1.value=1.00;  
+              sizechange2.value=1.17; 
+              sizechange3.value=1.33; 
+              sizechange4.parentNode.classList.add("hidden");
+              sizechange5.parentNode.classList.add("hidden");
+              sizechange6.parentNode.classList.add("hidden");
+            }
+
+
+          }
+        
+        </script>
+      </form>
+    </div>
+    <div class="price">
+      <h2>Оценка <span>💰</span></h2>
+      <form method="_POST" class="mid-column " name="price1" id="price1">
+        <div class="typeof">
+          <h3>Мы обменяем<br><span id="name2">iphone 1</span> на <span id="name3">iphone 2</span></h3>
+          <h4 style="text-align: center; width: 100%;" id="proposal">вам нужно будет доплатить</h4>
+          <div class="value" style="background-color: inherit;"><span>от </span><input type="number" name="priceFrom1" id="minPrice1" value="0" readonly style="margin:0;color:#333"></div>
+          <div class="value" style="background-color: inherit;"><span>до </span><input type="number" name="priceTo1" id="maxPrice1" value="100000" readonly></div>
+        </div>
+        <span>
+          <span class="gradient-border"><input type="submit" value="Trade - in" onclick="tradeIn();"></span>
+          <span class="gradient-border"><input type="submit" value="Продать"></span>
+        </span>
+        <span style="margin: 16px 0 0 0"><button onclick="location.reload()" style="width: 100%; height:2em; text-align:center; background-color:white; border-radius:16px;">Обновить</button></span>
+        <script>
+          
+        function errorMessage(e){
+          if(e.parentNode.parentNode===e.parentNode.parentNode.parentNode.getElementsByClassName('typeof')[0])e.parentNode.parentNode.parentNode.getElementsByClassName('error')[0].innerHTML='Заполните поле модель';
+          if(e.parentNode.parentNode===e.parentNode.parentNode.parentNode.getElementsByClassName('typeof')[1])e.parentNode.parentNode.parentNode.getElementsByClassName('error')[1].innerHTML='Заполните поле объем памяти';
+        }
+        function openNext1(e){
+          console.log('work');
+        if(e.parentNode.parentNode.name==="device1"){
+        if(document.forms["device1"]["modelchange"].value=="")return;
+        if(document.forms["device1"]["sizechange"].value=="")return;
+        e.parentNode.parentNode.parentNode.classList.remove('active');
+        e.parentNode.parentNode.parentNode.parentNode.getElementsByClassName('price')[0].classList.add('active');
+        name2.innerHTML=globalDevice;
+        name3.innerHTML=tradeInModule.querySelector('input[name="modelchange"]:checked').dataset.modelchange;
+        let summ1 = globalSumm;
+        let summ2 = parseFloat(tradeInModule.querySelector('input[name="modelchange"]:checked').value) * parseFloat(tradeInModule.querySelector('input[name="sizechange"]:checked').value);
+        console.log(summ1, summ2);
+        if(summ2<summ1){proposal.innerHTML="Вам не нужно доплачивать!";}
+        let summ3 = round(summ2-summ1, 1000);
+        minPrice1.value=(parseInt(summ3) * 0.8).toFixed(0);
+        maxPrice1.value= (parseInt(summ3)).toFixed(0) ;
+
+
+
+
+        
+        } 
+        
+        }
+        price1.addEventListener('submit', handleForm);
+        device1.addEventListener('submit', handleForm);
+      </script>
+      </form>
+    </div>
   </div>
 
   </body>
