@@ -1,6 +1,24 @@
 <!DOCTYPE HTML>
 <html class="void" lang="RU">
-<head>
+  <head>
+<script src="//code.jivo.ru/widget/XP5uRni4Ug" async></script>
+<script type = "text/javascript">
+				(function(d, w, k) {
+					w.youplatform_callback = function() {
+						try {
+							w.II = new youplatformIntegration(k);
+						} catch (e) {console.log(e)}
+					};
+
+					var n = d.getElementsByTagName("script")[0],
+						e = d.createElement("script");
+
+					e.type = "text/javascript";
+					e.async = true;
+					e.src = "https://youplatform.ru/admin/js/api_v4/youplatform_forms.js";
+					n.parentNode.insertBefore(e, n);
+				})(document, window, '6BDReQbteBHtQYzHa4BZ8yybDE699sKt');
+</script>
   <meta charset="UTF-8">
   <meta author="Rohh Thone">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -450,6 +468,7 @@
   <script>
     let globalSumm = 0;
     let globalDevice = "";
+    let globalSize = "";
   </script>
   <div class="commercial-calculator-dropdown" id="phoneCalculator">
     <div class="model active">
@@ -849,6 +868,7 @@
         name1.innerHTML=phoneCalculator.querySelector('input[name="model"]:checked').dataset.model;
         let sum = round(summ, 1000);
         globalDevice = phoneCalculator.querySelector('input[name="model"]:checked').dataset.model;
+        globalSize = phoneCalculator.querySelector('input[name="size"]:checked');
         globalSumm = (parseInt(sum)).toFixed(0) ;
         minPrice.value=(parseInt(sum) * 0.8).toFixed(0);
         maxPrice.value= (parseInt(sum)).toFixed(0) ;
@@ -1311,10 +1331,10 @@
       <h2>Оценка <span>💰</span></h2>
       <form method="_POST" class="mid-column " name="price1" id="price1">
         <div class="typeof">
-          <h3>Мы обменяем<br><span id="name2">iphone 1</span> на <span id="name3">iphone 2</span></h3>
+          <h3>Мы обменяем<br><input type="text" id="name2" name="tradein" readonly style="width: inherit; text-align: center;" ></h3>
           <h4 style="text-align: center; width: 100%;" id="proposal">вам нужно будет доплатить</h4>
-          <div class="value" style="background-color: inherit;"><span>от </span><input type="number" name="priceFrom1" id="minPrice1" value="0" readonly style="margin:0;color:#333"></div>
-          <div class="value" style="background-color: inherit;"><span>до </span><input type="number" name="priceTo1" id="maxPrice1" value="100000" readonly></div>
+          <div class="value" style="background-color: inherit;" id="remove1"><span>от </span><input type="number" name="priceFrom1" id="minPrice1" value="0" readonly style="margin:0;color:#333"></div>
+          <div class="value" style="background-color: inherit;" id="remove2"><span>до </span><input type="number" name="priceTo1" id="maxPrice1" value="100000" readonly></div>
         </div>
         <span>
           <span class="gradient-border"><input type="submit" value="Trade - in" onclick="tradeIn();"></span>
@@ -1334,16 +1354,16 @@
         if(document.forms["device1"]["sizechange"].value=="")return;
         e.parentNode.parentNode.parentNode.classList.remove('active');
         e.parentNode.parentNode.parentNode.parentNode.getElementsByClassName('price')[0].classList.add('active');
-        name2.innerHTML=globalDevice;
-        name3.innerHTML=tradeInModule.querySelector('input[name="modelchange"]:checked').dataset.modelchange;
+        name2.value=globalDevice + " " + globalSize.parentNode.getElementsByTagName('label')[0].innerHTML + ' на ' + tradeInModule.querySelector('input[name="modelchange"]:checked').dataset.modelchange + " " + tradeInModule.querySelector('input[name="sizechange"]:checked').parentNode.getElementsByTagName('label')[0].innerHTML;
         let summ1 = globalSumm;
         let summ2 = parseFloat(tradeInModule.querySelector('input[name="modelchange"]:checked').value) * parseFloat(tradeInModule.querySelector('input[name="sizechange"]:checked').value);
         console.log(summ1, summ2);
-        if(summ2<summ1){proposal.innerHTML="Вам не нужно доплачивать!";}
         let summ3 = round(summ2-summ1, 1000);
+        if(summ2<summ1){proposal.innerHTML="Вам не нужно доплачивать!";remove1.remove();remove2.remove()}
+        else{
         minPrice1.value=(parseInt(summ3) * 0.8).toFixed(0);
         maxPrice1.value= (parseInt(summ3)).toFixed(0) ;
-
+        }
 
 
 

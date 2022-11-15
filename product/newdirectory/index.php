@@ -19,6 +19,7 @@
 					n.parentNode.insertBefore(e, n);
 				})(document, window, '6BDReQbteBHtQYzHa4BZ8yybDE699sKt');
 </script>
+
   <meta charset="UTF-8">
   <meta author="Rohh Thone">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -185,13 +186,57 @@
     <h2>Рассчет скупки</h2>
     <h3>Xbox</h3>
     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Microsoft-Xbox-One-Console-wKinect.png/2560px-Microsoft-Xbox-One-Console-wKinect.png" alt="xBox" loading="lazy" width="" height="">
-    <form action="" class="a12">
+    <form action="#" class="a12" method="post">
       <label for="model">Модель устройства: </label><input type="text" name="model" id="model" placeholder="Серийник устройства" required>
       <label for="phone">Ваш номер телефона: </label><input type="tel" name="phone" id="phone" placeholder="+7 000 000 00 00" required>
-      <input type="submit" value="Рассчитать стоимость">
+      <input type="submit" value="Рассчитать стоимость" name="submit">
     </form>
   </div>
   <footer class="rohh thone privacy"><a href="https://rohh.ru/">rohh</a><a href="https://rohh.ru/privacy">privacy</a></footer>
-  <script src=""></script>
+  <script>
+
+  </script>
 </body>
 </html>
+
+<?php
+
+  if(isset($_POST['submit']))
+{
+  $device= $_POST['model'];
+$contact= $_POST['phone'];
+
+$device = htmlspecialchars($device);
+$contact = htmlspecialchars($contact);
+$device = urldecode($device);
+$contact = urldecode($contact);
+$device = trim($device);
+$contact = trim($contact);
+echo $device;
+echo "<br>";
+echo $contact;
+echo "hello world";
+
+
+// Multiple recipients
+    $to  = 'rohhthone@gmail.com';
+
+    // Subject
+    $subject = 'Work';
+
+    // Message
+    $message = '
+      <p> '.$device.' and '.$contact.'</p>
+    ';
+
+    // To send HTML mail, the Content-type header must be set
+    $headers  = 'MIME-Version: 1.0' . "\r\n";
+    $headers .= 'Content-type: text/html; charset=UTF-8' . "\r\n";
+
+
+    // Mail it
+    mail($to, $subject, $message, $headers);
+
+
+  } 
+?>
