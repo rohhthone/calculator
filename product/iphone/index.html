@@ -39,7 +39,7 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
-    *{all:unset}
+    /* *{all:unset} */
     .mid{display: flex; align-items: center; justify-content: space-around;}
     .mid-between{display: flex; align-items: center; justify-content: space-between;}
     .mid-column{display: flex; align-items: center; justify-content: space-around; flex-direction: column;}
@@ -128,7 +128,7 @@
 }
 
     /* Basics */
-    *{all: unset; margin: 0; padding: 0;}
+
 
     /* Blocks */
     style{display: none;}
@@ -248,6 +248,7 @@
     border-radius: var(--_b4);
   }
   .commercial-calculator-dropdown>div>form>.typeof>.value>input[type="radio"]{
+    all: unset;
     display: block;
     background: var(--white);
 
@@ -259,6 +260,7 @@
     box-sizing: border-box;
   }
   .commercial-calculator-dropdown>div>form>.typeof>.value>input[type="radio"]:checked{
+    
     display: block;
     background: var(--white);
 
@@ -327,6 +329,37 @@
     cursor: pointer;
     position: relative;
   }
+  .commercial-calculator-dropdown>div>form>span>button{
+    width: 100%;
+    height: 1.8em;
+    font-size: 1em;
+    font-weight: 400;
+    color: var(--SYSTEM_1-2);
+    background: var(--white);
+
+    border-radius: var(--_b4);
+    transition: .5s;
+
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+  }
+  .commercial-calculator-dropdown>div>form>span>div{
+    width: 100%;
+    height: 1.8em;
+    font-size: 1em;
+    font-weight: 400;
+    color: var(--SYSTEM_1-2);
+    background: var(--white);
+    display: block;
+
+    border-radius: var(--_b4);
+    transition: .5s;
+
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+  }
   .commercial-calculator-dropdown>div>form>span{
     width: 100%;
     height: auto;
@@ -353,6 +386,22 @@
     background-size: 400% 100%;
     animation: gradient 3s cubic-bezier(1, .5, .5, 1) infinite;
   }
+  .commercial-calculator-dropdown>div>form>span>button:hover{
+    color: var(--SYSTEM_1-1);
+    transition: .5s;
+    
+    background: var(--brand_3-0);
+    background-size: 400% 100%;
+    animation: gradient 3s cubic-bezier(1, .5, .5, 1) infinite;
+  }
+  .commercial-calculator-dropdown>div>form>span>div:hover{
+    color: var(--SYSTEM_1-1);
+    transition: .5s;
+    
+    background: var(--brand_3-0);
+    background-size: 400% 100%;
+    animation: gradient 3s cubic-bezier(1, .5, .5, 1) infinite;
+  }
   .commercial-calculator-dropdown>div>form>span>span>input{
     width: 100%;
     height: 1.8em;
@@ -360,6 +409,37 @@
     font-weight: 400;
     color: var(--SYSTEM_1-2);
     background: var(--white);
+
+    border-radius: var(--_b4);
+    transition: .5s;
+
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+  }
+  .commercial-calculator-dropdown>div>form>span>span>button{
+    width: 100%;
+    height: 1.8em;
+    font-size: 1em;
+    font-weight: 400;
+    color: var(--SYSTEM_1-2);
+    background: var(--white);
+
+    border-radius: var(--_b4);
+    transition: .5s;
+
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+  }
+  .commercial-calculator-dropdown>div>form>span>span>div{
+    width: 100%;
+    height: 1.8em;
+    font-size: 1em;
+    font-weight: 400;
+    color: var(--SYSTEM_1-2);
+    background: var(--white);
+    display: block;
 
     border-radius: var(--_b4);
     transition: .5s;
@@ -387,6 +467,22 @@
     border-radius: var(--_b4);
   }
   .commercial-calculator-dropdown>div>form>span>span>input:hover{
+    color: var(--SYSTEM_1-1);
+    transition: .5s;
+    
+    background: var(--brand_3-0);
+    background-size: 400% 100%;
+    animation: gradient 3s cubic-bezier(1, .5, .5, 1) infinite;
+  }
+  .commercial-calculator-dropdown>div>form>span>span>button:hover{
+    color: var(--SYSTEM_1-1);
+    transition: .5s;
+    
+    background: var(--brand_3-0);
+    background-size: 400% 100%;
+    animation: gradient 3s cubic-bezier(1, .5, .5, 1) infinite;
+  }
+  .commercial-calculator-dropdown>div>form>span>span>div:hover{
     color: var(--SYSTEM_1-1);
     transition: .5s;
     
@@ -467,9 +563,38 @@
   </style>
   <script>
     let globalSumm = 0;
+    let globalTrade = 0;
     let globalDevice = "";
     let globalSize = "";
   </script>
+  <style>
+    .popup{display: flex; align-items: center; justify-content: center; width: 100vw; height: 100vh; position: fixed; top: 0; left: 0; z-index: 999999999999; background: #fff;}
+    .popup>.close{ margin: 16px; padding: 8px ;border: 1px solid #0001; width: min-content; border-radius: 50%; box-shadow: 0 0 8px 2px #0002;transition: 1s; z-index: inherit; position: fixed; left: 0 ; top: 0;}
+    .popup>.close:hover{box-shadow: 0 0 4px 1px #0002; transition: 1s; z-index: inherit;}
+    .popup>.close>svg:hover{opacity: 0.7; transition: 1s; cursor: pointer; z-index: inherit;}
+
+    .popup>form{display: flex; align-items: center; flex-direction: column; justify-content: center; width: auto; height: min-content;}
+    .popup>form>input{width: 512px; height: 40px; border: 1px solid #0001; text-align: center; margin: 8px;border-radius: 8px; box-shadow: 0 0 8px 2px #0002; font-weight: 500; letter-spacing: 0.5px; transition: 1s;}
+    .popup>form>input:hover{ box-shadow: 0 0 4px 1px #0002; cursor: pointer;}
+
+    .popup>form>label{margin: 16px 0}
+  </style>
+  <div class="popup hidden" id="page01"> 
+    <div class="close" onclick="this.parentNode.classList.toggle('hidden')"><svg style="width:48px;height:48px" viewBox="0 0 24 24"><path fill="currentColor" d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" /></svg></div>
+    <form action="#" method="get">
+      <label for="phone001"><h2>Ваш телефонный номер:</h2></label>
+      <input type="tel" name="phone" id="phone001" placeholder="+ 7 000 000 00 00" required>
+      <input type="number" name="price" id="price001" value="1000" readonly hidden>
+      <input type="text" name="model" id="model001" value="iPhone 10 64GB" readonly hidden>
+      <input type="submit" value="Заказать обратный звонок">
+    </form>
+  </div>
+  <div class="hidden popup" id="page02"><div class="close"><svg style="width:48px;height:48px" viewBox="0 0 24 24">
+    <path fill="#000000" d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" />
+</svg></div></div>
+  <div class="hidden popup" id="page03"><div class="close"><svg style="width:48px;height:48px" viewBox="0 0 24 24">
+    <path fill="#000000" d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" />
+</svg></div></div>
   <div class="commercial-calculator-dropdown" id="phoneCalculator">
     <div class="model active">
       <h2>Устройство <span>📱</span></h2>
@@ -517,7 +642,7 @@
           <div class="value"><input type="radio" name="size" id="size6" value="0" required oninvalid="this.setCustomValidity(' '); errorMessage(this)"><label for="size6">1024gb</label></div>
         </div>
         <div class="error"></div>
-        <span class="gradient-border"><input type="submit" value="Дальше" onclick="openNext(this)"></span>
+        <span class="gradient-border"><div onclick="openNext(this)">Дальше </div></span>
         <script>
           function checkValue(e) {
               size0.parentNode.classList.remove("hidden");
@@ -809,7 +934,7 @@
           <div class="value"><input type="radio" name="visible" id="visible4" value="0.5" required oninvalid="this.setCustomValidity(' '); errorMessage(this)"><label for="visible4">Плохое</label></div>
         </div>
         <div class="error"></div>
-        <span class="gradient-border"><input type="submit" value="Дальше" onclick="openNext(this)"></span>
+        <span class="gradient-border"><div onclick="openNext(this)">Дальше </div></span>
       </form>
     </div>
     <div class="complect">
@@ -819,7 +944,7 @@
           <div class="value"><input type="radio" name="complect1" id="complect1" value="500"><label for="complect1">Коробка + 500 рублей</label></div>
           <div class="value"><input type="radio" name="complect2" id="complect2" value="700"><label for="complect2">Кабель +700 рублей</label></div>
         </div>
-        <span class="gradient-border"><input type="submit" onclick="openNext(this)" value="Дальше"></span>
+        <span class="gradient-border"><div onclick="openNext(this)">Дальше </div></span>
       </form>
     </div>
     <div class="price">
@@ -832,9 +957,10 @@
           <div class="value" style="background-color: inherit;"><span>до </span><input type="number" name="priceTo" id="maxPrice" value="100000" readonly></div>
         </div>
         <span>
-          <span class="gradient-border"><input type="submit" value="Trade - in" onclick="tradeIn();"></span>
-          <span class="gradient-border"><input type="submit" value="Продать"></span>
+          <span class="gradient-border"><div onclick="tradeIn();">Trade - in</div></span>
+          <span class="gradient-border"><div onclick="openPage();">Продать</div></span>
         </span>
+        <span style="margin: 16px 0 0 0"><button onclick="location.reload()" style="width: 100%; height:2em; text-align:center; background-color:white; border-radius:16px;">Обновить</button></span>
         <script>
         function errorMessage(e){
           if(e.parentNode.parentNode===e.parentNode.parentNode.parentNode.getElementsByClassName('typeof')[0])e.parentNode.parentNode.parentNode.getElementsByClassName('error')[0].innerHTML='Заполните поле модель';
@@ -893,6 +1019,8 @@
           tradeInModule.classList.toggle('hidden');
           phoneCalculator.classList.toggle('hidden');
         }
+
+        
     </script>
   </div>
   <div id="tradeInModule" class="commercial-calculator-dropdown hidden">
@@ -972,7 +1100,7 @@
           <div class="value"><input type="radio" name="color" id="color5" value="1.4" required oninvalid="this.setCustomValidity(' '); errorMessage(this)"><label for="color5">Цвет</label></div>
           <div class="value"><input type="radio" name="color" id="color6" value="0" required oninvalid="this.setCustomValidity(' '); errorMessage(this)"><label for="color6">Цвет</label></div>
         </div>
-        <span class="gradient-border"><input type="submit" value="Дальше" onclick="openNext1(this)"></span>
+        <span class="gradient-border"><div onclick="openNext1(this)">Дальше </div></span>
         <script>
           function checkValue1(e) {
               sizechange0.parentNode.classList.remove("hidden");
@@ -1337,8 +1465,8 @@
           <div class="value" style="background-color: inherit;" id="remove2"><span>до </span><input type="number" name="priceTo1" id="maxPrice1" value="100000" readonly></div>
         </div>
         <span>
-          <span class="gradient-border"><input type="submit" value="Trade - in" onclick="tradeIn();"></span>
-          <span class="gradient-border"><input type="submit" value="Продать"></span>
+          <span class="gradient-border"><div onclick="openPage2();">Trade - in</div></span>
+          <span class="gradient-border"><div onclick="openPage();">Продать</div></span>
         </span>
         <span style="margin: 16px 0 0 0"><button onclick="location.reload()" style="width: 100%; height:2em; text-align:center; background-color:white; border-radius:16px;">Обновить</button></span>
         <script>
@@ -1359,10 +1487,11 @@
         let summ2 = parseFloat(tradeInModule.querySelector('input[name="modelchange"]:checked').value) * parseFloat(tradeInModule.querySelector('input[name="sizechange"]:checked').value);
         console.log(summ1, summ2);
         let summ3 = round(summ2-summ1, 1000);
-        if(summ2<summ1){proposal.innerHTML="Вам не нужно доплачивать!";remove1.remove();remove2.remove()}
+        if(summ2<summ1){proposal.innerHTML="Вам не нужно доплачивать!";remove1.remove();remove2.remove();globalTrade=((parseInt(summ3)).toFixed(0))*-1;}
         else{
         minPrice1.value=(parseInt(summ3) * 0.8).toFixed(0);
         maxPrice1.value= (parseInt(summ3)).toFixed(0) ;
+        globalTrade=(parseInt(summ3)).toFixed(0) ;
         }
 
 
@@ -1376,7 +1505,19 @@
       </script>
       </form>
     </div>
+    
   </div>
-
+<script>
+  function openPage(){
+          price001.value = globalSumm;
+          model001.value = globalDevice;
+          page01.classList.toggle('hidden');
+        }
+  function openPage2(){
+          price001.value = globalTrade;
+          model001.value = name2.value;
+          page01.classList.toggle('hidden');
+        }
+</script>
   </body>
 </html>
