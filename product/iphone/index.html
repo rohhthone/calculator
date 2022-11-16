@@ -2,6 +2,7 @@
 <html class="void" lang="RU">
   <head>
 <script src="//code.jivo.ru/widget/XP5uRni4Ug" async></script>
+<link rel="shortcut icon" href="https://skupka-dorogo-spb.ru/favicon.ico" type="image/x-icon">
 <script type = "text/javascript">
 				(function(d, w, k) {
 					w.youplatform_callback = function() {
@@ -32,7 +33,7 @@
   <body class="mid">
     <header class="">
       <a href="../../">Главная</a>
-      <h1>Скупка Дорого</h1>
+      <h1 onclick="location.href = 'https://skupka-dorogo-spb.ru/'">Скупка Дорого</h1>
       <a href="../../contact/">Контакты</a>
     </header>
     
@@ -600,7 +601,7 @@
       <h2>Устройство <span>📱</span></h2>
       <form method="_POST" class="mid-column" name="device" id="device">
         <div class="typeof">
-          <h3>Модель</h3>
+          <h3>Выберите Ваше устройство</h3>
           <div class="value"><input type="radio" name="model" onclick="checkValue(this)" id="model0" value="43000" required oninvalid="this.setCustomValidity(' '); errorMessage(this)" data-model="iPhone 13"><label for="model0">iPhone 13</label></div>
           <div class="value"><input type="radio" name="model" onclick="checkValue(this)" id="model1" value="63000" required oninvalid="this.setCustomValidity(' '); errorMessage(this)" data-model="iPhone 13 Pro Max"><label for="model1">iPhone 13 Pro Max</label></div>
           <div class="value"><input type="radio" name="model" onclick="checkValue(this)" id="model2" value="57000" required oninvalid="this.setCustomValidity(' '); errorMessage(this)" data-model="iPhone 13 Pro"><label for="model2">iPhone 13 Pro</label></div>
@@ -1030,13 +1031,27 @@
         <div class="typeof">
           <style>
             .value>button:hover{background: var(--brand_2-0); transition: 1s;}
+            .value>.active{
+              color: var(--SYSTEM_1-1);
+              transition: .5s;
+                      
+              background: var(--brand_3-0);
+              background-size: 400% 100%;
+              animation: gradient 3s cubic-bezier(1, .5, .5, 1) infinite;
+            }
           </style>
           <h3>Тип</h3>
-          <div class="value"><div style="text-align: center; width:100%; height: 2em; border-radius: 0.6em; cursor:pointer;transition: 1s;" onclick="newPhone.classList.add('hidden'); oldPhone.classList.remove('hidden')">Б/У</div></div>
-          <div class="value"><div style="text-align: center; width:100%; height: 2em; border-radius: 0.6em; cursor:pointer;transition: 1s;" onclick="newPhone.classList.remove('hidden'); oldPhone.classList.add('hidden')">Новый</div></div>
+          <div class="value"><div id="bu" class="" style="text-align: center; width:100%; height: 2em; border-radius: 0.6em; cursor:pointer;transition: 1s;" onclick="newPhone.classList.add('hidden'); oldPhone.classList.remove('hidden'); changeState(this);">Б/У</div></div>
+          <div class="value"><div id="newd" class="active" style="text-align: center; width:100%; height: 2em; border-radius: 0.6em; cursor:pointer;transition: 1s;" onclick="newPhone.classList.remove('hidden'); oldPhone.classList.add('hidden'); changeState(this);">Новый</div></div>
         </div>
+        <script>
+          function changeState(e){
+            if (e===bu){bu.classList.add('active');newd.classList.remove('active');}
+            if (e===newd){newd.classList.add('active');bu.classList.remove('active');}
+          }
+        </script>
         <div class="typeof" id="newPhone">
-          <h3>Модель</h3>
+          <h3>Выберите желаемое устройство</h3>
           <div class="value"><input type="radio" name="modelchange" onclick="checkValue1(this)" id="modelchange0" value="60000"  oninvalid="this.setCustomValidity(' '); errorMessage(this)" data-modelchange="iPhone 13"><label for="modelchange0">iPhone 13</label></div>
           <div class="value"><input type="radio" name="modelchange" onclick="checkValue1(this)" id="modelchange1" value="75000"  oninvalid="this.setCustomValidity(' '); errorMessage(this)" data-modelchange="iPhone 13 Pro Max"><label for="modelchange1">iPhone 13 Pro Max</label></div>
           <div class="value"><input type="radio" name="modelchange" onclick="checkValue1(this)" id="modelchange2" value="65000"  oninvalid="this.setCustomValidity(' '); errorMessage(this)" data-modelchange="iPhone 13 Pro"><label for="modelchange2">iPhone 13 Pro</label></div>
@@ -1051,7 +1066,7 @@
           <div class="value"><input type="radio" name="modelchange" onclick="checkValue1(this)" id="modelchange11" value="26000"  oninvalid="this.setCustomValidity(' '); errorMessage(this)" data-modelchange="iPhone SE 2022"><label for="modelchange11">iPhone SE 2022</label></div>
         </div>
         <div class="typeof hidden" id="oldPhone">
-          <h3>Модель</h3>
+          <h3>Выберите желаемое устройство</h3>
           <div class="value"><input type="radio" name="modelchange" onclick="checkValue2(this)" id="modeloldchange0" value="50000"  oninvalid="this.setCustomValidity(' '); errorMessage(this)" data-modelchange="iPhone 13"><label for="modeloldchange0">iPhone 13</label></div>
           <div class="value"><input type="radio" name="modelchange" onclick="checkValue2(this)" id="modeloldchange1" value="70000"  oninvalid="this.setCustomValidity(' '); errorMessage(this)" data-modelchange="iPhone 13 Pro Max"><label for="modeloldchange1">iPhone 13 Pro Max</label></div>
           <div class="value"><input type="radio" name="modelchange" onclick="checkValue2(this)" id="modeloldchange2" value="65000"  oninvalid="this.setCustomValidity(' '); errorMessage(this)" data-modelchange="iPhone 13 Pro"><label for="modeloldchange2">iPhone 13 Pro</label></div>
@@ -1090,16 +1105,6 @@
           <div class="value"><input type="radio" name="sizechange" id="sizechange6" value="0" required oninvalid="this.setCustomValidity(' '); errorMessage(this)"><label for="sizechange6">1024gb</label></div>
         </div>
         <div class="error"></div>
-        <div class="typeof">
-          <h3>Цвет</h3>
-          <div class="value"><input type="radio" name="color" id="color0" value="0" required oninvalid="this.setCustomValidity(' '); errorMessage(this)"><label for="color0">Цвет</label></div>
-          <div class="value"><input type="radio" name="color" id="color1" value="0" required oninvalid="this.setCustomValidity(' '); errorMessage(this)"><label for="color1">Цвет</label></div>
-          <div class="value"><input type="radio" name="color" id="color2" value="0" required oninvalid="this.setCustomValidity(' '); errorMessage(this)"><label for="color2">Цвет</label></div>
-          <div class="value"><input type="radio" name="color" id="color3" value="1" required oninvalid="this.setCustomValidity(' '); errorMessage(this)"><label for="color3">Цвет</label></div>
-          <div class="value"><input type="radio" name="color" id="color4" value="1.2" required oninvalid="this.setCustomValidity(' '); errorMessage(this)"><label for="color4">Цвет</label></div>
-          <div class="value"><input type="radio" name="color" id="color5" value="1.4" required oninvalid="this.setCustomValidity(' '); errorMessage(this)"><label for="color5">Цвет</label></div>
-          <div class="value"><input type="radio" name="color" id="color6" value="0" required oninvalid="this.setCustomValidity(' '); errorMessage(this)"><label for="color6">Цвет</label></div>
-        </div>
         <span class="gradient-border"><div onclick="openNext1(this)">Дальше </div></span>
         <script>
           function checkValue1(e) {
@@ -1460,9 +1465,7 @@
       <form method="_POST" class="mid-column " name="price1" id="price1">
         <div class="typeof">
           <h3>Мы обменяем<br><input type="text" id="name2" name="tradein" readonly style="width: inherit; text-align: center;" ></h3>
-          <h4 style="text-align: center; width: 100%;" id="proposal">вам нужно будет доплатить</h4>
-          <div class="value" style="background-color: inherit;" id="remove1"><span>от </span><input type="number" name="priceFrom1" id="minPrice1" value="0" readonly style="margin:0;color:#333"></div>
-          <div class="value" style="background-color: inherit;" id="remove2"><span>до </span><input type="number" name="priceTo1" id="maxPrice1" value="100000" readonly></div>
+          <h4 style="text-align: center; width: 100%;" id="proposal">вам нужно будет доплатить <span id="maxPrice1"></span></h4>
         </div>
         <span>
           <span class="gradient-border"><div onclick="openPage2();">Trade - in</div></span>
@@ -1489,8 +1492,7 @@
         let summ3 = round(summ2-summ1, 1000);
         if(summ2<summ1){proposal.innerHTML="Вам не нужно доплачивать!";remove1.remove();remove2.remove();globalTrade=((parseInt(summ3)).toFixed(0))*-1;}
         else{
-        minPrice1.value=(parseInt(summ3) * 0.8).toFixed(0);
-        maxPrice1.value= (parseInt(summ3)).toFixed(0) ;
+        maxPrice1.innerHTML= 'от ' + (parseInt(summ3) * 0.8).toFixed(0) + ' до ' + (parseInt(summ3)).toFixed(0) ;
         globalTrade=(parseInt(summ3)).toFixed(0) ;
         }
 
