@@ -2,7 +2,6 @@
 <html class="void" lang="RU">
   <head>
 <script src="//code.jivo.ru/widget/XP5uRni4Ug" async></script>
-<link rel="shortcut icon" href="https://skupka-dorogo-spb.ru/favicon.ico" type="image/x-icon">
 <script type = "text/javascript">
 				(function(d, w, k) {
 					w.youplatform_callback = function() {
@@ -20,6 +19,7 @@
 					n.parentNode.insertBefore(e, n);
 				})(document, window, '6BDReQbteBHtQYzHa4BZ8yybDE699sKt');
 </script>
+
   <meta charset="UTF-8">
   <meta author="Rohh Thone">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -160,7 +160,7 @@
     </script>
     <div id="nav">
       <div class="underline menu a1">
-      <a>Устройства</a>
+      <a href="/product">Устройства</a>
       <div class="underline menu a2">
         <a href="../iphone">iPhone</a>
         <a href="../ipad">iPad</a>
@@ -169,7 +169,7 @@
         <a href="../applewatch">Apple Watch</a>
       </div>
     </div>
-      <h1 onclick="location.href = 'https://skupka-dorogo-spb.ru/'">Скупка Дорого</h1>
+      <h1>Скупка Дорого</h1>
       <div class="underline menu a3">
       <a href="../../">Главная</a>
       </div>
@@ -177,22 +177,66 @@
   </div>
   <div id="body">
     <style>
-      #body>img{ width: 30%; aspect-ratio: 1/1; object-fit: contain;}
+      #body>img{ width: 30%; aspect-ratio: 1/1;object-fit: contain;}
       #body>form{display: flex; align-items: center; flex-direction: column; width: 60%; font-weight: 500;}
       #body>form>label{width: 100%;}
       #body>form>input{width: 100%; background: #0001; border-radius: 8px; box-sizing: border-box; padding: 8px; margin: 16px 0 0 0;}
       #body>form>input:focus, #body>form>input:hover{background: #1112; cursor: pointer;}
     </style>
     <h2>Рассчет скупки</h2>
-    <h3>iMac</h3>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Imac_16-9.png/780px-Imac_16-9.png" alt="Монитор" loading="lazy" width="" height="">
-    <form onsubmit="window.open('https://skupka-dorogo-spb.ru/thankyou/', '_blank');" action="" class="a12">
+    <h3>Xbox</h3>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Microsoft-Xbox-One-Console-wKinect.png/2560px-Microsoft-Xbox-One-Console-wKinect.png" alt="xBox" loading="lazy" width="" height="">
+    <form action="#" class="a12" method="post">
       <label for="model">Модель устройства: </label><input type="text" name="model" id="model" placeholder="Серийник устройства" required>
       <label for="phone">Ваш номер телефона: </label><input type="tel" name="phone" id="phone" placeholder="+7 000 000 00 00" required>
-      <input type="submit" value="Рассчитать стоимость">
+      <input type="submit" value="Рассчитать стоимость" name="submit">
     </form>
   </div>
   <footer class="rohh thone privacy"><a href="https://rohh.ru/">rohh</a><a href="https://rohh.ru/privacy">privacy</a></footer>
-  <script src=""></script>
+  <script>
+
+  </script>
 </body>
 </html>
+
+<?php
+
+  if(isset($_POST['submit']))
+{
+  $device= $_POST['model'];
+$contact= $_POST['phone'];
+
+$device = htmlspecialchars($device);
+$contact = htmlspecialchars($contact);
+$device = urldecode($device);
+$contact = urldecode($contact);
+$device = trim($device);
+$contact = trim($contact);
+echo $device;
+echo "<br>";
+echo $contact;
+echo "hello world";
+
+
+// Multiple recipients
+    $to  = 'rohhthone@gmail.com';
+
+    // Subject
+    $subject = 'Work';
+
+    // Message
+    $message = '
+      <p> '.$device.' and '.$contact.'</p>
+    ';
+
+    // To send HTML mail, the Content-type header must be set
+    $headers  = 'MIME-Version: 1.0' . "\r\n";
+    $headers .= 'Content-type: text/html; charset=UTF-8' . "\r\n";
+
+
+    // Mail it
+    mail($to, $subject, $message, $headers);
+
+
+  } 
+?>
