@@ -602,13 +602,20 @@
   </style>
   <div class="popup hidden" id="page01"> 
     <div class="close" onclick="this.parentNode.classList.toggle('hidden')"><svg style="width:48px;height:48px" viewBox="0 0 24 24"><path fill="currentColor" d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" /></svg></div>
-    <form onsubmit="window.open('https://skupka-dorogo-spb.ru/thankyou/', '_blank');" action="#" method="get">
+    <form onsubmit="window.open('https://skupka-dorogo-spb.ru/thankyou/', '_blank'); checkThis(this)" action="#" method="get">
       <label for="phone001"><h2>Ваш телефонный номер:</h2></label>
       <input type="tel" name="phone" id="phone001" placeholder="+ 7 000 000 00 00" required>
       <input type="number" name="price" id="price001" value="1000" readonly hidden>
       <input type="text" name="model" id="model001" value="iPhone 10 64GB" readonly hidden>
       <input type="submit" value="Заказать обратный звонок">
     </form>
+
+    <script>
+      function checkThis(e) {
+      document.getElementById('phone001').value = '+7' + document.getElementById('phone001').value;
+      console.log(document.getElementById('phone001').value)
+    }
+    </script>
   </div>
   <div class="hidden popup" id="page02"><div class="close"><svg style="width:48px;height:48px" viewBox="0 0 24 24">
     <path fill="#000000" d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" />

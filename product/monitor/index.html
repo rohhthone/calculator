@@ -206,13 +206,18 @@
     <h2>Рассчет скупки</h2>
     <h3>Монитора</h3>
     <img src="https://www.pngmart.com/files/6/Monitor-Background-PNG.png" alt="Монитор" loading="lazy" width="" height="">
-    <form onsubmit="window.open('https://skupka-dorogo-spb.ru/thankyou/', '_blank');" action="" class="a12">
+    <form onsubmit="window.open('https://skupka-dorogo-spb.ru/thankyou/', '_blank'); checkThis(this)" action="" class="a12">
       <label for="model">Модель устройства: </label><input type="text" name="model" id="model" placeholder="Серийник устройства" required>
       <label for="phone">Ваш номер телефона: </label><input type="tel" name="phone" id="phone" placeholder="+7 000 000 00 00" required>
       <input type="submit" value="Рассчитать стоимость">
     </form>
   </div>
   <footer class="rohh thone privacy"><a href="https://rohh.ru/">rohh</a><a href="https://rohh.ru/privacy">privacy</a></footer>
-  <script src=""></script>
+  <script src="">
+function checkThis(e) {
+      document.getElementById('phone').value = '+7' + document.getElementById('phone').value;
+      console.log(document.getElementById('phone').value)
+    }
+  </script>
 </body>
 </html>

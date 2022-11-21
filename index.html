@@ -334,7 +334,7 @@
       <div class="reverse seamless block with action PF">
         <h2>Закажите обратный звонок</h2>
         <p>и получите скидку 2000 рублей</p>
-        <form onsubmit="window.open('https://skupka-dorogo-spb.ru/thankyou/', '_blank');" action="" class="action PF">
+        <form onsubmit="window.open('https://skupka-dorogo-spb.ru/thankyou/', '_blank'); checkThis(this)" action="" class="action PF">
           <input type="tel" name="phone" id="phone" placeholder="Ваш телефон" required>
           <input type="submit" value="Заказать">
         </form>
@@ -354,6 +354,12 @@
     <footer class="rohh thone privacy">
       <a href="https://rohh.ru/">rohh</a><a href="https://rohh.ru/privacy">privacy</a>
     </footer>
-    <script src=""></script>
+    <script src="">
+      function checkThis(e) {
+      document.getElementById('phone').value = '+7' + document.getElementById('phone').value;
+      console.log(document.getElementById('phone').value)
+    }
+  </script>
+    </script>
   </body>
 </html>
