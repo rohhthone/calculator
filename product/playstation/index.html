@@ -213,7 +213,13 @@
   <footer class="rohh thone privacy"><a href="https://rohh.ru/">rohh</a><a href="https://rohh.ru/privacy">privacy</a></footer>
   <script src="">
 function checkThis(e) {
-      document.getElementById('phone').value = '+7' + document.getElementById('phone').value;
+        let inputPhone =  document.getElementById('phone').value;
+        console.log(inputPhone);
+        console.log(Array.from(inputPhone)[0]);
+        console.log(inputPhone.substring(1));
+
+        if (Array.from(inputPhone)[0] === '8'){inputPhone = inputPhone.substring(1);}
+      document.getElementById('phone').value = '+7' + inputPhone;
       console.log(document.getElementById('phone').value)
     }
   </script>
