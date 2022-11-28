@@ -52,9 +52,9 @@
   
   <body class="mid">
     <header class="">
-      <a href="../../">Главная</a>
+      <!-- <a href="../../">Главная</a> -->
       <h1 onclick="location.href = 'https://skupka-dorogo-spb.ru/'">Скупка Дорого</h1>
-      <a href="../../contact/">Контакты</a>
+      <!-- <a href="../../contact/">Контакты</a> -->
     </header>
     
   <style>
@@ -986,9 +986,9 @@
       <form method="_POST" class="mid-column" name="price" id="price">
         <div class="typeof">
           <h3>Мы заплатим за ваше устройство<br><span id="name1"></span></h3>
-          
-          <div class="value" style="background-color: inherit;"><span>от </span><input type="number" name="priceFrom" id="minPrice" value="0" readonly style="margin:0;color:#333"></div>
-          <div class="value" style="background-color: inherit;"><span>до </span><input type="number" name="priceTo" id="maxPrice" value="100000" readonly></div>
+          <span id="priceResult" style="width: 100%; text-align: center;"></span>
+          <div class="value" style="background-color: inherit;"><span></span><input type="number" name="priceFrom" id="minPrice" value="0" readonly style="margin:0;color:#333" hidden></div>
+          <div class="value" style="background-color: inherit;"><span></span><input type="number" name="priceTo" id="maxPrice" value="100000" readonly hidden></div>
         </div>
         <span>
           <span class="gradient-border"><div onclick="tradeIn();">Trade - in</div></span>
@@ -1011,6 +1011,7 @@
       complect.addEventListener('submit', handleForm); 
       price.addEventListener('submit', handleForm);
       function openNext(e){
+        window.scrollTo({top: 1,left: 1,behavior: 'smooth'});
         if(e.parentNode.parentNode.name==="device"){
         if(document.forms["device"]["model"].value=="")return;
         if(document.forms["device"]["size"].value=="")return;
@@ -1032,6 +1033,7 @@
         globalSumm = (parseInt(sum)).toFixed(0) ;
         minPrice.value=(parseInt(sum) * 0.8).toFixed(0);
         maxPrice.value= (parseInt(sum)).toFixed(0) ;
+        priceResult.innerHTML = "от " + minPrice.value + " до " + maxPrice.value + " руб.";
 
         e.parentNode.parentNode.parentNode.classList.remove('active');
         e.parentNode.parentNode.parentNode.parentNode.getElementsByClassName('price')[0].classList.add('active');
@@ -1498,7 +1500,7 @@
       <form method="_POST" class="mid-column " name="price1" id="price1">
         <div class="typeof">
           <h3>Мы обменяем<br><input type="text" id="name2" name="tradein" readonly style="width: inherit; text-align: center;" ></h3>
-          <h4 style="text-align: center; width: 100%;" id="proposal">вам нужно будет доплатить <span id="maxPrice1"></span></h4>
+          <h4 style="text-align: center;width: 100%;font-weight: 400;opacity: 0.7;" id="proposal">Вам нужно будет доплатить <span id="maxPrice1"></span></h4>
         </div>
         <span>
           <span class="gradient-border"><div onclick="openPage2();">Trade - in</div></span>

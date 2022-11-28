@@ -23,7 +23,7 @@
 <noscript><div><img src="https://mc.yandex.ru/watch/91277945" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 <!-- /Yandex.Metrika counter -->
 <link rel="shortcut icon" href="https://skupka-dorogo-spb.ru/favicon.ico" type="image/x-icon">
-<!-- <script type = "text/javascript">
+<script type = "text/javascript">
 				(function(d, w, k) {
 					w.youplatform_callback = function() {
 						try {
@@ -39,7 +39,7 @@
 					e.src = "https://youplatform.ru/admin/js/api_v4/youplatform_forms.js";
 					n.parentNode.insertBefore(e, n);
 				})(document, window, '6BDReQbteBHtQYzHa4BZ8yybDE699sKt');
-</script> -->
+</script>
   <meta charset="UTF-8">
   <meta author="Rohh Thone">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -215,9 +215,13 @@
   <footer class="rohh thone privacy"><a href="https://rohh.ru/">rohh</a><a href="https://rohh.ru/privacy">privacy</a></footer>
   <script src="">
 function checkThis(e) {
-        const inputPhone =  document.getElementById('phone').value;
-        if (Array.from(inputPhone)[0] == 8){inputPhone = inputPhone.substring(1)}
-      document.getElementById('phone').value = '+7' + document.getElementById('phone').value;
+        let inputPhone =  document.getElementById('phone').value;
+        console.log(inputPhone);
+        console.log(Array.from(inputPhone)[0]);
+        console.log(inputPhone.substring(1));
+
+        if (Array.from(inputPhone)[0] === '8'){inputPhone = inputPhone.substring(1);}
+      document.getElementById('phone').value = '+7' + inputPhone;
       console.log(document.getElementById('phone').value)
     }
   </script>
